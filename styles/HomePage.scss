@@ -1,0 +1,254 @@
+.LandingPageImageContainer {
+    max-width: 100%; 
+    overflow: hidden; 
+}
+
+.LandingPageImageContainer--Mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.FullscreenImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.FullscreenImage--Mobile {
+    width: 900px; 
+    max-width: 900px;
+    height: auto; 
+    display: block; 
+    margin-left: -300px; 
+    opacity: 1;
+}
+
+.FullscreenImage--SquareViewports {
+    bottom: -20vh !important;
+}
+
+.FullscreenImage--SquareViewportsLight {
+    bottom: -10vh !important;
+}
+
+.GradientShape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    transform-origin: 0px 100%;
+    transform: skewY(-6deg);
+    overflow: hidden;
+}
+
+.GradientShape__Background--Toned {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    opacity: 1;
+    background: radial-gradient(#4ca1fe 17%, rgba(76, 161, 254, 0) 57.5% 100%) -530px -140px no-repeat,
+        radial-gradient(#0d3cfb 13%, rgba(13, 60, 251, 0) 50% 100%) -550px 125px no-repeat,
+        radial-gradient(#738ef9 10%, rgba(115, 142, 249, 0) 62.5% 100%) -580px 5px no-repeat,
+        radial-gradient(#d9eafe 10%, rgba(217, 234, 254, 0) 50% 100%) -300px -5px no-repeat,
+        radial-gradient(#90c2ff 12%, rgba(144, 194, 255, 0) 55% 100%) -100px -120px no-repeat,
+        radial-gradient(#0d3cfb 14%, rgba(13, 60, 251, 0) 52.5% 100%) -200px 20px no-repeat,
+        radial-gradient(#9499ff 12%, rgba(148, 153, 255, 0) 60% 100%) 125px -60px no-repeat,
+        radial-gradient(#8988e5 14%, rgba(137, 136, 229, 0) 45% 100%) 325px -75px no-repeat,
+        radial-gradient(#0d3cfb 15%, rgba(13, 60, 251, 0) 55% 100%) 500px -110px no-repeat,
+        radial-gradient(#0d3cfb 14%, rgba(13, 60, 251, 0) 55% 100%) 545px 130px no-repeat,
+        #4b47b5;
+}
+
+.GradientShape__Background--Contrast {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    opacity: 1;
+    background: radial-gradient(#feb556 9.5%, rgba(254, 181, 86, 0) 58% 100%) 150px 100px no-repeat,
+        radial-gradient(#ff003f 11%, rgba(255, 0, 63, 0) 65% 100%) -20px -80px no-repeat,
+        radial-gradient(#90e0ff 13%, rgba(144, 224, 255, 0) 57.5% 100%) 400px -160px no-repeat,
+        radial-gradient(#bf00c6 15%, rgba(191, 0, 198, 0) 60% 100%) 270px -100px no-repeat,
+        radial-gradient(#fd684b 10%, rgba(253, 104, 75, 0) 40% 100%) 400px 25px no-repeat,
+        radial-gradient(#ff003f 15%, rgba(255, 0, 63, 0) 45% 100%) 161px -29px no-repeat,
+        radial-gradient(#bf00c6 12%, rgba(191, 0, 198, 0) 55% 100%) -350px -120px no-repeat,
+        radial-gradient(#bf00c6 14%, rgba(191, 0, 198, 0) 50% 100%) -560px -120px no-repeat,
+        radial-gradient(#f36858 5%, rgba(243, 104, 88, 0) 32.5% 100%) -420px 80px no-repeat,
+        radial-gradient(#90e0ff 15%, rgba(144, 224, 255, 0) 45% 100%) -450px 0px no-repeat,
+        #a960ee;
+}
+
+.GradientShape__Background--Bright {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    opacity: 1;
+    background: radial-gradient(#fecc5d 17%, rgba(255, 200, 87, 0) 60% 100%) -440px 10px no-repeat,
+        radial-gradient(#ddd18a 14%, rgba(221, 209, 138, 0) 52% 100%) -470px 80px no-repeat,
+        radial-gradient(#e26a79 14%, rgba(226, 106, 121, 0) 47.5% 100%) -220px 100px no-repeat,
+        radial-gradient(#a380e7 12%, rgba(163, 128, 231, 0) 45% 100%) 0px -45px no-repeat,
+        radial-gradient(#a961e9 15%, rgba(169, 97, 233, 0) 50% 100%) 0px 20px no-repeat,
+        radial-gradient(#a961e9 12%, rgba(169, 97, 233, 0) 45% 100%) 125px 20px no-repeat,
+        radial-gradient(#bf00c6 15%, rgba(191, 0, 198, 0) 57% 100%) 540px -110px no-repeat,
+        radial-gradient(#ae35d9 17%, rgba(174, 53, 217, 0) 62.5% 100%) 460px 0px no-repeat,
+        radial-gradient(#bf00c6 10%, rgba(191, 0, 198, 0) 40% 100%) -540px -140px no-repeat,
+        #fb0044;
+}
+
+.GradientShape__Background--Mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    opacity: 1;
+    background: radial-gradient(#fd684b 14%, rgba(253, 104, 75, 0) 58% 100%) 150px 100px no-repeat,
+        radial-gradient(#ff003f 11%, rgba(255, 0, 63, 0) 65% 100%) 100px -80px no-repeat,
+        radial-gradient(#feb556 10%, rgba(254, 181, 86, 0) 40% 100%) 80px 50px no-repeat,
+        radial-gradient(#feb556 14%, rgba(254, 181, 86, 0) 45% 100%) 0px 100px no-repeat,
+        radial-gradient(#feb556 12%, rgba(254, 181, 86, 0) 50% 100%) 180px 75px no-repeat,
+        radial-gradient(#bf00c6 15%, rgba(191, 0, 198, 0) 60% 100%) -40px 60px no-repeat,
+        radial-gradient(#ff003f 15%, rgba(255, 0, 63, 0) 45% 100%) 161px -29px no-repeat,
+        radial-gradient(#bf00c6 12%, rgba(191, 0, 198, 0) 55% 100%) -130px -120px no-repeat,
+        radial-gradient(#bf00c6 14%, rgba(191, 0, 198, 0) 50% 100%) -560px -120px no-repeat,
+        radial-gradient(#f36858 12%, rgba(243, 104, 88, 0) 55% 100%) -140px 100px no-repeat,
+        radial-gradient(#90e0ff 13%, rgba(144, 224, 255, 0) 57.5% 100%) 0px 100px no-repeat,
+        #a960ee;
+}
+
+// custom gradient svg animations
+
+.wave-svg {
+    width: 150vw;
+}
+
+.wave-svg-mobile {
+    position: absolute;
+    bottom: 0px;
+}
+  
+.wave-group {
+    animation-name: waveAnimation;
+    animation-duration: 16s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: blur(2.5px);
+}
+
+@keyframes waveAnimation {
+    0% {
+      transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(-30%);
+    }
+    75% {
+      transform: translateX(-15%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+  
+.fade-in {
+    animation-name: fadeInAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+  
+.fade-out {
+    animation-name: fadeOutAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+// headline word animations
+  
+.HeadlineAnimated__Word {
+    position: absolute;
+    bottom: 0px;
+    color: #0d3cfb;
+    margin-left: 1.15vw;
+}
+  
+@keyframes WordDisappear {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+@keyframes WordAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+  
+.WordAppear {
+    animation-name: WordAppear;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+}
+  
+.WordDisappear {
+    animation-name: WordDisappear;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+}
+
+.WordInvisible {
+    opacity: 0;
+}
