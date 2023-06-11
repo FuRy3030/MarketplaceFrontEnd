@@ -13,12 +13,16 @@ import HorizontalCallToAction from '@/app/components/molecules/landing/Horizonta
 import SmallSectionHeader from '@/app/components/atoms/landing/SmallSectionHeader';
 import WhyUs from '@/app/components/molecules/landing/WhyUs';
 import SocialMediaButton from '@/app/components/atoms/landing/SocialMediaButton';
+import CalendlyWidget from '../app/components/organisms/global/CalendlyWidget';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 function LandingPage() {
     const [BackgroundIndexVisibility, SetBackgroundIndexVisibility] = useState<number>(0);
     const [HeadlineWordSelectedIndex, SetHeadlineWordSelectedIndex] = useState<number>(0);
     const [IsHigherLandingScreenNeeded, SetIsHigherLandingScreenNeeded] = useState<boolean>(false);
     const IsMobileUsed = IsMobile();
+    const Router = useRouter();
 
     useEffect(() => {
         const AnimationInterval = setInterval(() => {
@@ -33,8 +37,8 @@ function LandingPage() {
 
     useEffect(() => {
         const AnimationInterval = setInterval(() => {
-            SetHeadlineWordSelectedIndex((PrevValue) => PrevValue < 2 ? PrevValue + 1 : 0);
-        }, 6000);
+            SetHeadlineWordSelectedIndex((PrevValue) => PrevValue < 1 ? PrevValue + 1 : 0);
+        }, 9000);
     
         // Clean up the interval on component unmount
         return () => {
@@ -64,25 +68,28 @@ function LandingPage() {
 
     return (
         <>
+            <Head>
+                <title>Competify - Łączymy uczniów z laureatami olimpiad</title>
+                <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę." />
+            </Head>
             <NavigationBar />
             <div className='z-10 absolute top-[100px] left-[5vw] w-[90vw] mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw]'>
-                <h1 id='Headline' className='text-mobile-title px-4 relative text-deep-dark font-bold mb-6 mt-6 cursor-default leading-[1.05] md:mb-5 md:mt-0 md:px-0 md:text-title' style={{fontFamily: "'Source Sans Pro', sans-serif", letterSpacing: '-0.04em'}}>
-                    Rozpocznij <br />
-                    przygotowanie z <br />
-                    nami do
-                    <span className={clsx('HeadlineAnimated__Word', GetClassNameForHeadlineWord(HeadlineWordSelectedIndex, 0))}>olimpiad</span> 
-                    <span className={clsx('HeadlineAnimated__Word', GetClassNameForHeadlineWord(HeadlineWordSelectedIndex, 1))}>konkursów</span> 
-                    <span className={clsx('HeadlineAnimated__Word', GetClassNameForHeadlineWord(HeadlineWordSelectedIndex, 2))}>egzaminów</span>
+                <h1 id='Headline' className='text-mobile-title px-4 relative text-deep-dark font-extrabold mb-6 mt-6 cursor-default leading-[1.05] md:mb-5 md:mt-0 md:px-0 md:text-title' style={{fontFamily: "'Nunito', sans-serif", letterSpacing: '-0.04em'}}>
+                    Z naszym zespołem <br />
+                    osiągniesz wymarzony <br />
+                    wynik w
+                    <span className={clsx('HeadlineAnimated__Word', GetClassNameForHeadlineWord(HeadlineWordSelectedIndex, 0))}>olimpiadzie</span> 
+                    <span className={clsx('HeadlineAnimated__Word', GetClassNameForHeadlineWord(HeadlineWordSelectedIndex, 1))}>konkursie</span> 
                 </h1>
                 <h2 className='px-4 text-dark font-bold my-4 cursor-default text-2xl md:text-3xl md:px-0'>
                     Łączymy uczniów z laureatami olimpiad 
                 </h2>
                 <div className='p-4 bg-white-transparent-90 rounded-xl mb-5'>
                     <p className='text-dark font-semibold cursor-default text-justify text-lg'>
-                        W BLANK zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę. 
+                        W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę. 
                     </p>
                 </div>
-                <StandardButton Text={"Przygotuj się razem z nami!"} onClick={() => {}} ClassNames={'w-max'}
+                <StandardButton Text={"Przygotuj się razem z nami!"} onClick={() => Router.push('#Contact')} ClassNames={'w-max'}
                     Icon={'icon-[material-symbols--chevron-right-rounded]'} Variant='dark' />
             </div>
             <div>
@@ -107,7 +114,7 @@ function LandingPage() {
             <div className={clsx('absolute left-0 w-screen md:w-[98.5vw] lg:w-[99vw] xl:w-screen h-auto mt-6', 
                 IsHigherLandingScreenNeeded ? 'top-[120vh]' : !IsMobileUsed ? 'top-[110vh]' : 'top-[100vh]')}
             >
-                <Container ClassNames="flex flex-wrap">
+                <Container ClassNames="flex flex-wrap" Id="CompanyQualities">
                     <CompanyQuality 
                         Heading='Czym się zajmujemy?'
                         Description='Kierując się wartościami profesjonalizmu oraz erudycji, nasi tutorzy prowadzą indywidualne zajęcia przygotowujące do olimpiad. Nasze zajęcia odbywają się online, w godzinach wspólnie dobranych przez tutora i ucznia. Skupiamy się podczas nich na jednostkowych potrzebach - lekcje są w pełni dostosowane do potrzeb i wymagań ucznia.'
@@ -125,6 +132,7 @@ function LandingPage() {
                     CallToActionText="Masz pytania lub chcesz dowiedzieć się więcej?" 
                     ButtonText="Umów się na bezpłatną konsultację" 
                     Icon="icon-[ant-design--schedule-filled]" 
+                    OnClick={() => Router.push('#Contact')}
                 />
                 <Container ClassNames="flex flex-wrap">
                     <CompanyQuality 
@@ -133,20 +141,27 @@ function LandingPage() {
                         ImagePath='olympiad-winner'
                         AltTagImage='Prized tutor icon'
                     />
+                    <CompanyQuality 
+                        Heading='Do kogo kierowane są nasze lekcje?'
+                        Description='Na nasze zajęcia może zapisać się każdy, kto chce wziąć udział w jednej z olimpiad. Klasa szkoły średniej czy wcześniejsze doświadczenia z olimpiadami nie mają dla nas żadnego znaczenia! Nasze zajęcia w pełni skupiają się na potrzebach ucznia - nie ma więc znaczenia, od jakiego stopnia wiedzy będziemy zaczynać współpracować.'
+                        ImagePath='everyone'
+                        AltTagImage='Everyone icon'
+                    />
                 </Container>
                 <HorizontalCallToAction 
                     CallToActionText="Chcesz sprawdzić swoich przyszłych mentorów?" 
                     ButtonText="Poznaj naszych tutorów" 
                     Icon="icon-[octicon--comment-discussion-16]"
+                    OnClick={() => Router.push('#Contact')}
                 />
-                <Container ClassNames="my-14">
+                <Container ClassNames="my-14" Id="WhyUs">
                     <SmallSectionHeader 
                         SubHeader="Dlaczego my?" 
                         Header="Najbardziej spersonalizowane podejście w przygotowaniu do olimpiady" 
                     />
                     <WhyUs />
                 </Container>
-                <Container ClassNames="my-14">
+                <Container ClassNames="my-14" Id="Contact">
                     <SmallSectionHeader 
                         SubHeader="Kontakt" 
                         Header="Skontaktuj się z nami!" 
@@ -154,15 +169,14 @@ function LandingPage() {
                     <p className='mb-6 text-base font-semibold text-semi-dark text-justify w-full md:text-left md:w-[80%]'>
                         Z przyjemnością rozwiążemy wszystkie Twoje wątpliwości dotyczące naszej oferty oraz odpowiemy na wszystkie pytania, które pojawią się po Twojej stronie. Nasi tutorzy odpowiedzą na Twoje pytania związane z przeprowadzeniem zajęć czy  konkretnych olimpiad. 
                     </p>
-                    <h6 className='text-xl font-bold text-dark mb-4'>W razie pytań napisz maila, zadzwoń lub zadaj je nam poprzez social media:</h6>
+                    <CalendlyWidget />
+                    <h6 className='text-xl font-bold text-dark mb-4 mt-6'>W razie pytań napisz maila, zadzwoń lub zadaj je nam poprzez social media:</h6>
                     <div className='flex flex-row flex-wrap justify-center md:justify-around md:w-11/12 mx-auto'>
-                        <SocialMediaButton Icon="icon-[tabler--mail-star]" Color="#5c51d3" />
-                        <SocialMediaButton Icon="icon-[material-symbols--phone-callback-outline-rounded]" Color="#0d3cfb" />
-                        <SocialMediaButton Icon="icon-[bx--bxl-facebook]" Color="#0165E1" />
-                        <SocialMediaButton Icon="icon-[mdi--facebook-messenger]" Color="#17A9FD" />
-                        <SocialMediaButton Icon="icon-[mdi--instagram]" Color="#d62976" />
-                        <SocialMediaButton Icon="icon-[mdi--linkedin]" Color="#0A66C2" />
-                        <SocialMediaButton Icon="icon-[ic--baseline-tiktok]" Color="#000000" />
+                        <SocialMediaButton Icon="icon-[tabler--mail-star]" Color="#5c51d3" Link='mailto:kontakt@competify.pl' />
+                        <SocialMediaButton Icon="icon-[bx--bxl-facebook]" Color="#0165E1" Link='https://www.facebook.com/competifypl/' />
+                        <SocialMediaButton Icon="icon-[mdi--instagram]" Color="#d62976" Link='https://www.instagram.com/competifypl/' />
+                        <SocialMediaButton Icon="icon-[mdi--linkedin]" Color="#0A66C2" Link='https://linkedin.com/company/competifypl' />
+                        <SocialMediaButton Icon="icon-[ic--baseline-tiktok]" Color="#000000" Link='https://www.tiktok.com/@competify' />
                     </div>
                 </Container>
             </div>

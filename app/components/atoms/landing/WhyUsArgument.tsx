@@ -4,6 +4,7 @@ interface WhyUsArgumentProps {
     Icon: string;
     Argument: string;
     Variant: "blue" | "purple";
+    Description?: string;
 }
 
 function WhyUsArgument(Props: WhyUsArgumentProps) {
@@ -16,6 +17,7 @@ function WhyUsArgument(Props: WhyUsArgumentProps) {
                 Icon
             </span>
             <h6 className="mb-2 font-bold text-dark text-base cursor-default">{Props.Argument}</h6>
+            <p className="text-sm text-semi-dark cursor-default font-semibold">{Props.Description}</p>
         </div>
     );
 };

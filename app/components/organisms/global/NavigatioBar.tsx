@@ -7,7 +7,7 @@ function NavigationBar() {
     return (
         <div className="w-auto absolute top-0 left-0 h-auto z-20">
             <div className="my-4 mx-8 flex w-auto h-auto">
-                {!IsMobileUsed && <NavigationBarDesktop />}
+                <NavigationBarDesktop />
             </div>
         </div>
     );

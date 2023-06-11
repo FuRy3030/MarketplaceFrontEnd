@@ -204,7 +204,7 @@
     position: absolute;
     bottom: 0px;
     color: #0d3cfb;
-    margin-left: 1.15vw;
+    margin-left: 1.5vw;
 }
   
 @keyframes WordDisappear {
@@ -212,7 +212,7 @@
         opacity: 1;
         transform: translateY(0%);
     }
-    50% {
+    13% {
         opacity: 0;
         transform: translateY(100%);
     }
@@ -227,7 +227,7 @@
         opacity: 0;
         transform: translateY(-100%);
     }
-    50% {
+    13% {
         opacity: 1;
         transform: translateY(0%);
     }
@@ -239,13 +239,13 @@
   
 .WordAppear {
     animation-name: WordAppear;
-    animation-duration: 6s;
+    animation-duration: 9s;
     animation-timing-function: ease-in-out;
 }
   
 .WordDisappear {
     animation-name: WordDisappear;
-    animation-duration: 6s;
+    animation-duration: 9s;
     animation-timing-function: ease-in-out;
 }
 
