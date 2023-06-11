@@ -69,8 +69,13 @@ function LandingPage() {
     return (
         <>
             <Head>
-                <title>Competify - Łączymy uczniów z laureatami olimpiad</title>
-                <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę." />
+                <title>Competify - Razem z nami zawalczysz o najwyższe wyniki!</title>
+                <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                <meta property="og:title" content="Competify - Razem z nami zawalczysz o najwyższe wyniki!" />
+                <meta property="og:description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                <meta property="og:image" content="/website-previews/website-preview.png" />
+                <meta property="og:url" content="https://www.competify.pl" />
+                <meta property="og:type" content="website" />
                 <link rel="icon" href="/logo/favicon.ico" />
             </Head>
             <NavigationBar />
@@ -144,7 +149,7 @@ function LandingPage() {
                     />
                     <CompanyQuality 
                         Heading='Do kogo kierowane są nasze lekcje?'
-                        Description='Na nasze zajęcia może zapisać się każdy, kto chce wziąć udział w jednej z olimpiad. Klasa szkoły średniej czy wcześniejsze doświadczenia z olimpiadami nie mają dla nas żadnego znaczenia! Nasze zajęcia w pełni skupiają się na potrzebach ucznia - nie ma więc znaczenia, od jakiego stopnia wiedzy będziemy zaczynać współpracować.'
+                        Description='Na nasze zajęcia może zapisać się każdy, kto chce wziąć udział w jednej z olimpiad. Klasa szkoły średniej czy wcześniejsze doświadczenia z olimpiadami nie mają dla nas żadnego znaczenia! W pełni skupiamy się na potrzebach ucznia - stopień wiedzy na początku naszej współpracy nie jest brany pod uwagę.'
                         ImagePath='everyone'
                         AltTagImage='Everyone icon'
                     />
