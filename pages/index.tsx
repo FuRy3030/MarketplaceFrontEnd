@@ -71,6 +71,7 @@ function LandingPage() {
             <Head>
                 <title>Competify - Łączymy uczniów z laureatami olimpiad</title>
                 <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę." />
+                <link rel="icon" href="/logo/favicon.ico" />
             </Head>
             <NavigationBar />
             <div className='z-10 absolute top-[100px] left-[5vw] w-[90vw] mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw]'>
@@ -94,7 +95,7 @@ function LandingPage() {
             </div>
             <div>
                 <div className={clsx('LandingPageImageContainer', IsMobileUsed && 'LandingPageImageContainer--Mobile')}>
-                    <img src="/personal_design_images/landing-page-fullhd.png" alt="Landing Page" 
+                    <img src="/personal_design_images/landing-page-fullhd2.png" alt="Landing Page" 
                         className={clsx(!IsMobileUsed ? 'FullscreenImage' : 'FullscreenImage--Mobile', 
                         IsHigherLandingScreenNeeded ? 'FullscreenImage--SquareViewports' : !IsMobileUsed && 'FullscreenImage--SquareViewportsLight')} 
                     />
