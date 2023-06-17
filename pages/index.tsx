@@ -79,8 +79,8 @@ function LandingPage() {
                 <meta property="og:url" content="https://www.competify.pl" />
                 <meta property="og:type" content="website" />
                 <link rel="icon" href="/logo/favicon.ico" />
-                <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d" data-blockingmode="auto" type="text/javascript"></script>
-                <script id="CookieDeclaration" src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js" type="text/javascript" async></script>
+                <Script src="https://consent.cookiebot.com/uc.js" id="Cookiebot" strategy="lazyOnload" data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d" data-blockingmode="auto" />
+                <Script src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js" id="CookieDeclaration" strategy="lazyOnload" async />
             </Head>
             <NavigationBar />
             <div className='z-10 absolute top-[100px] left-[5vw] w-[90vw] mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw]'>
