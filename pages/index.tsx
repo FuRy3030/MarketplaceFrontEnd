@@ -196,8 +196,17 @@ function LandingPage() {
                 </Container>
             </div>
             {/* <CookieConsent /> */}
-            <Script src="https://consent.cookiebot.com/uc.js" id="Cookiebot" strategy="lazyOnload" data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d" data-blockingmode="auto" />
-            <Script src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js" id="CookieDeclaration" strategy="lazyOnload" async />
+            <Script
+                id="Cookiebot"
+                src="https://consent.cookiebot.com/uc.js"
+                data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d"
+                strategy="afterInteractive"
+            />
+            <Script
+                id="CookieDeclaration"
+                src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js"
+                strategy="afterInteractive"
+            />
         </>
     );
 }
