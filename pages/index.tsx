@@ -16,6 +16,7 @@ import SocialMediaButton from '@/app/components/atoms/landing/SocialMediaButton'
 import CalendlyWidget from '../app/components/organisms/global/CalendlyWidget';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import TutorsList from '../app/components/molecules/landing/TutorsList';
 
 function LandingPage() {
     const [BackgroundIndexVisibility, SetBackgroundIndexVisibility] = useState<number>(0);
@@ -158,7 +159,7 @@ function LandingPage() {
                     CallToActionText="Chcesz sprawdzić swoich przyszłych mentorów?" 
                     ButtonText="Poznaj naszych tutorów" 
                     Icon="icon-[octicon--comment-discussion-16]"
-                    OnClick={() => Router.push('#Contact')}
+                    OnClick={() => Router.push('#Tutors')}
                 />
                 <Container ClassNames="my-14" Id="WhyUs">
                     <SmallSectionHeader 
@@ -166,6 +167,13 @@ function LandingPage() {
                         Header="Najbardziej spersonalizowane podejście w przygotowaniu do olimpiady" 
                     />
                     <WhyUs />
+                </Container>
+                <Container ClassNames="my-14 overflow-x-auto" Id="Tutors">
+                    <SmallSectionHeader 
+                        SubHeader="Nasi tutorzy" 
+                        Header="Poznaj naszych ekspertów w przygotowaniu do olimpiad" 
+                    />
+                    <TutorsList />
                 </Container>
                 <Container ClassNames="my-14" Id="Contact">
                     <SmallSectionHeader 

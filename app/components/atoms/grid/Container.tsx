@@ -8,7 +8,7 @@ interface ContainerProps {
 
 function Container(Props: ContainerProps) {
     return (
-        <div className={clsx("mx-auto w-[88vw] 2xl:w-[1350px]", Props.ClassNames)} id={Props.Id}>
+        <div className={clsx("mx-auto relative w-[88vw] 2xl:w-[1350px]", Props.ClassNames)} id={Props.Id}>
             {Props.children}
         </div>
     );
