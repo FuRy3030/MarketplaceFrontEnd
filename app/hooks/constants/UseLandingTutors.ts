@@ -1,14 +1,14 @@
 export default function UseLandingTutors() {
     return [
         {
-            ImageSrc: '/tutor_images/Maciej_Kamiński.jpg',
-            Name: 'Maciej Kamiński',
-            Description: 'Dwukrotny laureat (2021, 2022) i finalista (2020) Olimpiady Losy Żołnierza i Dzieje Oręża Polskiego, laureat (2022) i finalista (2021) Olimpiady Historycznej. Absolwent krakowskiej Piątki, obecnie student International Studies na Leiden University.'
-        },
-        {
             ImageSrc: '/tutor_images/Jakub_Kalbarczyk.jpg',
             Name: 'Jakub Kalbarczyk',
             Description: 'Współzałożyciel Competify. Laureat 2 lokaty (2023) i finalista (2020) Olimpiady Literatury i Języka Polskiego oraz laureat (2022) i finalista (2021) Olimpiady Filozoficznej. Absolwent szczecińskiej trzynastki, student Minerva University w San Francisco.'
+        },
+        {
+            ImageSrc: '/tutor_images/Adam_Duda.jfif',
+            Name: 'Adam Duda',
+            Description: 'Współzałożyciel Competify. Laureat 10 miejsca (2021) i zwycięzca (2022) Olimpiady Wiedzy Ekonomicznej. Absolwent krakowskiej piątki, student Rice University w Houston.'
         },
         {
             ImageSrc: '/tutor_images/Adam_Zienkiewicz.jpg',
@@ -51,9 +51,9 @@ export default function UseLandingTutors() {
             Description: 'Laureat 1 lokaty (2023), Laureat 2 lokaty (2022) oraz finalista (2021) Olimpiady Wiedzy Ekonomicznej. Brązowy medalista Międzynarodowej Olimpiady Ekonomicznej. Absolwent szczecińskiej trzynastki, zaczynający studia na SGH.'
         },
         {
-            ImageSrc: '/tutor_images/Adam_Duda.jfif',
-            Name: 'Adam Duda',
-            Description: 'Laureat 10 miejsca (2021) i zwycięzca (2022) Olimpiady Wiedzy Ekonomicznej. Absolwent krakowskiej piątki, student Rice University w Houston.'
+            ImageSrc: '/tutor_images/Maciej_Kamiński.jpg',
+            Name: 'Maciej Kamiński',
+            Description: 'Dwukrotny laureat (2021, 2022) i finalista (2020) Olimpiady Losy Żołnierza i Dzieje Oręża Polskiego, laureat (2022) i finalista (2021) Olimpiady Historycznej. Absolwent krakowskiej Piątki, obecnie student International Studies na Leiden University.'
         },
         {
             ImageSrc: '/tutor_images/Jakub_Artyszuk.jpg',

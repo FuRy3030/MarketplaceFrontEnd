@@ -9,7 +9,7 @@ interface TutorCardProps {
 };
 
 function TutorCard(Props: TutorCardProps) {
-    const IsLargeUsed = IsResolution(992);
+    const IsLargeUsed = IsResolution(1024);
 
     return (
         <div className="flex flex-col w-[22.5%] my-5 mx-auto">
