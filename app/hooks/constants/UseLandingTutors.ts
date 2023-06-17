@@ -89,6 +89,11 @@ export default function UseLandingTutors() {
             ImageSrc: '/tutor_images/Marek_Grzymała-Figura.jpg',
             Name: 'Marek Grzymała-Figura',
             Description: 'Laureat (2023) Olimpiady Wiedzy o Polsce i Świecie Współczesnym, Finalista (2022) Olimpiady Historycznej, Finalista (2023) Olimpiady Losy żołnierza i dzieje oręża polskiego. Absolwent szczecińskiej trzynastki, student SciencesPo na kampusie w Reims.'
+        },
+        {
+            ImageSrc: '/tutor_images/Marcel_Szklarczyk.jpg',
+            Name: 'Marcel Szklarczyk',
+            Description: 'Laureat (2023) Olimpiady Języka Angielskiego, Zwycięzca (2022) Ogólnopolskiego Konkursu English Ace, Laureat (2021) Ogólnopolskiego Konkursu English High Flier. Absolwent II LO w Szczecinie.'
         }
     ];
 };
