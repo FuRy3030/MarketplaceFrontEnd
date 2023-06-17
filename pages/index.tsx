@@ -17,6 +17,7 @@ import CalendlyWidget from '../app/components/organisms/global/CalendlyWidget';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import TutorsList from '../app/components/molecules/landing/TutorsList';
+import Script from 'next/script';
 
 function LandingPage() {
     const [BackgroundIndexVisibility, SetBackgroundIndexVisibility] = useState<number>(0);
@@ -78,6 +79,8 @@ function LandingPage() {
                 <meta property="og:url" content="https://www.competify.pl" />
                 <meta property="og:type" content="website" />
                 <link rel="icon" href="/logo/favicon.ico" />
+                <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d" data-blockingmode="auto" type="text/javascript"></script>
+                <script id="CookieDeclaration" src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js" type="text/javascript" async></script>
             </Head>
             <NavigationBar />
             <div className='z-10 absolute top-[100px] left-[5vw] w-[90vw] mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw]'>
@@ -194,6 +197,7 @@ function LandingPage() {
                     </div>
                 </Container>
             </div>
+            {/* <CookieConsent /> */}
         </>
     );
 }
