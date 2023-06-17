@@ -11,9 +11,9 @@ export default function UseLandingTutors() {
             Description: 'Współzałożyciel Competify. Laureat 10 miejsca (2021) i zwycięzca (2022) Olimpiady Wiedzy Ekonomicznej. Absolwent krakowskiej piątki, student Rice University w Houston.'
         },
         {
-            ImageSrc: '/tutor_images/Adam_Zienkiewicz.jpg',
-            Name: 'Adam Zienkiewicz',
-            Description: 'Finalista (2021) i Laureat 4 miejsca (2023) Olimpiady Filozoficznej. Maturzysta w Szkole w Chmurze.'
+            ImageSrc: '/tutor_images/Helena_Arendacz.jpg',
+            Name: 'Helena Arendacz',
+            Description: 'Dwukrotna laureatka Olimpiady Matematycznej (2022, 2023), srebrna medalistka Europejskiej Olimpiady Matematycznej Dziewcząt (2023), srebrna medalistka European Mathematical Cup 2022/2023. Absolwentka szczecińskiej trzynastki, zaczynająca studiować informatykę na UJ.'
         },
         {
             ImageSrc: '/tutor_images/Marek_Artyszuk.jpg',
@@ -26,9 +26,14 @@ export default function UseLandingTutors() {
             Description: 'Zwycięzca (2022) Olimpiady Historycznej. Absolwent warszawskiego Czackiego'
         },
         {
-            ImageSrc: '/tutor_images/Helena_Arendacz.jpg',
-            Name: 'Helena Arendacz',
-            Description: 'Dwukrotna laureatka Olimpiady Matematycznej (2022, 2023), srebrna medalistka Europejskiej Olimpiady Matematycznej Dziewcząt (2023), srebrna medalistka European Mathematical Cup 2022/2023. Absolwentka szczecińskiej trzynastki, zaczynająca studiować informatykę na UJ.'
+            ImageSrc: '/tutor_images/Jakub_Artyszuk.jpg',
+            Name: 'Jakub Artyszuk',
+            Description: 'Laureat 8 miejsca (2023) oraz finalista (2022) Olimpiady Fizycznej. Absolwent szczecińskiej trzynastki.'
+        },
+        {
+            ImageSrc: '/tutor_images/Adam_Zienkiewicz.jpg',
+            Name: 'Adam Zienkiewicz',
+            Description: 'Finalista (2021) i Laureat 4 miejsca (2023) Olimpiady Filozoficznej. Maturzysta w Szkole w Chmurze.'
         },
         {
             ImageSrc: '/tutor_images/Agata_Łaska.jpg',
@@ -56,9 +61,9 @@ export default function UseLandingTutors() {
             Description: 'Dwukrotny laureat (2021, 2022) i finalista (2020) Olimpiady Losy Żołnierza i Dzieje Oręża Polskiego, laureat (2022) i finalista (2021) Olimpiady Historycznej. Absolwent krakowskiej Piątki, obecnie student International Studies na Leiden University.'
         },
         {
-            ImageSrc: '/tutor_images/Jakub_Artyszuk.jpg',
-            Name: 'Jakub Artyszuk',
-            Description: 'Laureat 8 miejsca (2023) oraz finalista (2022) Olimpiady Fizycznej. Absolwent szczecińskiej trzynastki.'
+            ImageSrc: '/tutor_images/Jan_Wiktorzak.jpg',
+            Name: 'Jan Wiktorzak',
+            Description: 'Laureat 2 lokaty (2023) oraz laureat (2022) Olimpiady Przedsiębiorczości. Laureat (2023) Olimpiady Wiedzy Ekonomicznej. Absolwent VI LO w Radomiu, zaczynający studia na SGH.'
         },
         {
             ImageSrc: '/tutor_images/Krzysztof_Król.jpg',
