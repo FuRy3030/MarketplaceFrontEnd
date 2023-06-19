@@ -13,22 +13,27 @@ body {
     overflow-x: hidden;
 }
 
-.text-clamp-minimal {
-
-}
-
-.text-clamp-small {
-
-}
-
 .text-clamp-medium {
     font-size: clamp(12px, 2vw, 20px)
 }
 
-.text-clamp-big {
-
+#PrivacyPolicy li, span {
+    font-weight: 500;
 }
 
-.text-clamp-large {
+#PrivacyPolicy span {
+    margin-bottom: 10px;
+}
 
+#PrivacyPolicy h6 {
+    font-weight: 700;
+}
+
+#PrivacyPolicy ul {
+    list-style: circle;
+}
+
+#PrivacyPolicy .InnerList {
+    padding-left: 40px;
+    list-style: inside;
 }

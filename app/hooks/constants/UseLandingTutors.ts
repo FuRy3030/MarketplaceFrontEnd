@@ -88,7 +88,7 @@ export default function UseLandingTutors() {
         {
             ImageSrc: '/tutor_images/Oskar_Leksa.jpg',
             Name: 'Oskar Leksa',
-            Description: 'Finalista (2022) i laureat drugiego stopnia (2023) Olimpiady Biologicznej. Laureat Nagrody Głównej programu Adamed SmartUp oraz stypendysta w Immerse Education Essay Competition.'
+            Description: 'Finalista (2022) i laureat drugiego stopnia (2023) Olimpiady Biologicznej. Laureat Nagrody Głównej programu Adamed SmartUp oraz stypendysta w Immerse Education Essay Competition. Absolwent LO im. św. Jadwigi Królowej w Kielcach.'
         },
         {
             ImageSrc: '/tutor_images/Marek_Grzymała-Figura.jpg',
