@@ -26,9 +26,9 @@ export default function UseLandingTutors() {
             Description: 'Zwycięzca (2022) Olimpiady Historycznej. Absolwent warszawskiego Czackiego'
         },
         {
-            ImageSrc: '/tutor_images/Jakub_Artyszuk.jpg',
-            Name: 'Jakub Artyszuk',
-            Description: 'Laureat 8 miejsca (2023) oraz finalista (2022) Olimpiady Fizycznej. Absolwent szczecińskiej trzynastki.'
+            ImageSrc: '/tutor_images/Aleksandra_Główka.jpg',
+            Name: 'Aleksandra Główka',
+            Description: 'Laureatka (2023) i finalistka (2022) Olimpiady Chemicznej. Uczestniczka programu Adamed SmartUP.  Absolwentka warszawskiej Poniatówki, zaczynająca studia na WUMie.'
         },
         {
             ImageSrc: '/tutor_images/Adam_Zienkiewicz.jpg',
@@ -99,6 +99,16 @@ export default function UseLandingTutors() {
             ImageSrc: '/tutor_images/Marcel_Szklarczyk.jpg',
             Name: 'Marcel Szklarczyk',
             Description: 'Laureat (2023) Olimpiady Języka Angielskiego, Zwycięzca (2022) Ogólnopolskiego Konkursu English Ace, Laureat (2021) Ogólnopolskiego Konkursu English High Flier. Absolwent II LO w Szczecinie.'
+        },
+        {
+            ImageSrc: '/tutor_images/Wiktor_Wiśniewski.jpg',
+            Name: 'Wiktor Wiśniewski',
+            Description: 'Finalista (2022) i laureat 9. lokaty (2023) Olimpiady Chemicznej Uczestnik programu Adamed SmartUP. Absolwent V LO w Gdańsku, zaczynający studia lekarskie na GUMie.'
+        },
+        {
+            ImageSrc: '/tutor_images/Sara_Smargol.jpg',
+            Name: 'Sara Smargol',
+            Description: 'Laureatka (2021) oraz finalistka (2022) Olimpiady Losy Żołnierza i Dzieje Oręża Polskiego. Finalistka (2021, 2022) Olimpiady Historycznej. Mediewistka, studiująca prawo i historię na Uniwersytecie Warszawskim.'
         }
     ];
 };
