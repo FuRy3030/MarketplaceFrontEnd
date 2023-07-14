@@ -1,0 +1,175 @@
+// Custom overrides 
+
+.euiFieldText {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiFieldNumber {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiFormControlLayout--group {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiSuperSelectControl {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiFormControlLayoutDelimited {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiComboBox__inputWrap {
+    box-shadow: 0 0 transparent, 
+        inset 0 0 0 1px rgba(17, 42, 134, 0.1), 
+        0 0 0 1px #e0e0e0, 
+        0 2px 4px 0 rgba(0, 0, 0, .07), 
+        0 1px 1.5px 0 rgba(0, 0, 0, .05) !important;
+}
+
+.euiSuperSelectControl:focus {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiSuperSelectControl.euiSuperSelect--isOpen__button {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiFieldPassword:focus {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiFieldText:focus {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiFieldNumber:focus {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiComboBox.euiComboBox-isOpen .euiComboBox__inputWrap {
+    background-image: linear-gradient(to top, #635bff, #635bff 2px, transparent 2px, transparent 100%) !important;
+}
+
+.euiFormLabel.euiFormLabel-isFocused {
+    color: #4b50ec !important;
+}
+
+.euiCheckbox__label {
+    font-weight: 600;
+}
+
+.euiTab__content {
+    color: #0a2540 !important;
+}
+
+.euiTab-isSelected {
+    box-shadow: inset 0 -2px 0 #635bff !important;
+}
+
+.euiTab-isSelected span {
+    color: #635bff !important;
+}
+
+.euiDatePicker--inline > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.euiButtonEmpty__text {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600;
+}
+
+.euiBadge__content {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600;
+}
+
+.euiComboBoxPlaceholder {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500;
+}
+
+.ToastShow {
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+  
+.ToastHide {
+    transform: translateY(calc(100% + 40px));
+    transition: transform 0.5s ease-in-out;
+}
+
+.ToastDanger {
+    color: rgb(95, 33, 32);
+}
+
+.ToastDanger [data-test-subj="euiToastHeader"] span {
+    color: rgb(95, 33, 32);
+    font-size: 17px;
+}
+
+.ToastDanger [data-test-subj="euiToastHeader"] svg {
+    fill: rgb(211, 47, 47);
+}
+
+.ToastSuccess {
+    color: rgb(30, 70, 32);
+}
+
+.ToastSuccess [data-test-subj="euiToastHeader"] span {
+    color: rgb(30, 70, 32);
+    font-size: 17px;
+}
+
+.ToastSuccess [data-test-subj="euiToastHeader"] svg {
+    fill: rgb(46, 125, 50);
+}
+
+.ToastWarning {
+    color: rgb(102, 60, 0);
+}
+
+.ToastWarning [data-test-subj="euiToastHeader"] span {
+    color: rgb(102, 60, 0);
+    font-size: 17px;
+}
+
+.ToastWarning [data-test-subj="euiToastHeader"] svg {
+    fill: rgb(237, 108, 2);
+}
+
+.ToastInfo {
+    color: rgb(1, 67, 97);
+}
+
+.ToastInfo [data-test-subj="euiToastHeader"] span {
+    color: rgb(1, 67, 97);
+    font-size: 17px;
+}
+
+.ToastInfo [data-test-subj="euiToastHeader"] svg {
+    fill: rgb(2, 136, 209);
+}

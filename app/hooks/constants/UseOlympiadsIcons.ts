@@ -1,9 +1,10 @@
 export default function UseOlympiadsIcons() {
     return {
+        ALL: 'icon-[bi--grid-fill]',
         OWE: 'icon-[fluent--money-calculator-24-filled]',
         OP: 'icon-[ic--round-business-center]',
         OM: 'icon-[ph--math-operations-bold]',
-        OI: 'icon-[teenyicons--computer-outline]',
+        OI: 'icon-[simple-icons--cplusplus]',
         OFIZ: 'icon-[fluent--math-format-linear-24-filled]',
         OLCHEM: 'icon-[clarity--atom-solid]',
         OBIOL: 'icon-[material-symbols--microbiology]',

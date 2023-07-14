@@ -28,6 +28,7 @@
     "eslint-config-next": "13.4.2",
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
+    "isomorphic-dompurify": "^1.7.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "next": "13.4.2",

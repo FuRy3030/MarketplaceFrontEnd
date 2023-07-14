@@ -6,6 +6,7 @@ export interface NavigationBarLinkProps {
     To: string;
     Text: string;
     Icon: string;
+    ClassName?: string;
 }
 
 function NavigationBarLink(Props: NavigationBarLinkProps) {
@@ -13,10 +14,10 @@ function NavigationBarLink(Props: NavigationBarLinkProps) {
     const IsLinkActive = Router.pathname === Props.To;
 
     return (
-        <Link href={Props.To} className={clsx("font-bold text-base px-3 py-2 flex items-center hover:text-brand-purple-light transition-all duration-300",
-            IsLinkActive ? "text-brand-purple-light" : "text-semi-dark-alt")}
+        <Link href={Props.To} className={clsx("font-bold text-base px-3.5 py-2 flex items-center hover:text-brand-purple-light transition-all duration-300",
+            IsLinkActive ? "text-brand-purple-light" : "text-semi-dark-alt", Props.ClassName)}
         >
-            <span className={clsx('mr-3 text-lg', Props.Icon)}></span>{Props.Text}
+            <span className={clsx('mr-2 text-lg', Props.Icon)}></span>{Props.Text}
         </Link>
     );
 };

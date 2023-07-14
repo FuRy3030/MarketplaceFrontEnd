@@ -11,6 +11,17 @@ html {
 body {
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
+    font-weight: 500;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
 .text-clamp-medium {
@@ -53,6 +64,21 @@ body {
     border-radius: 15px;
 }
 
-// ::-webkit-scrollbar-track {
-//     background: #f3f6f8; /* Customize the track color */
-// }
+.CustomVerticalScrollWithGrayBackground::-webkit-scrollbar {
+    width: 0.6em;
+    height: 8px;
+}
+   
+.CustomVerticalScrollWithGrayBackground::-webkit-scrollbar-track {
+    background: #f3f6f8;
+}
+   
+.CustomVerticalScrollWithGrayBackground::-webkit-scrollbar-thumb {
+    background-color: rgb(193, 193, 193);
+    border-radius: 15px;
+}
+
+.CircleButton:hover {
+    transition: all ease 0.22s;
+    box-shadow: rgb(228, 232, 240) 0px 0px 0px 5.5px;
+}

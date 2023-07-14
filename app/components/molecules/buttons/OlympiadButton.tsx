@@ -5,6 +5,7 @@ interface OlympiadButtonProps {
     EnumValue: string;
     Label: string;
     Color: string;
+    IsActive: boolean;
 }
 
 function OlympiadButton(Props: OlympiadButtonProps) {
@@ -12,7 +13,7 @@ function OlympiadButton(Props: OlympiadButtonProps) {
         <div className="flex flex-col mx-1.5 my-1">
             <CircleButton
                 Icon={UseOlympiadsIcons()[Props.EnumValue as keyof typeof UseOlympiadsIcons]}
-                Color={Props.Color}
+                Color={Props.IsActive ? Props.Color : 'linear-gradient(-90deg, rgb(145, 147, 170), rgb(125, 130, 168))'}
                 OnClick={() => {}} 
                 ClassName="mb-1 mx-auto"
             />
