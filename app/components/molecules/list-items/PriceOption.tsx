@@ -9,7 +9,7 @@ interface PriceOptionProps {
     Price: number;
     Currency: string;
     PaidHours: number;
-    ServiceCode: string;
+    ServiceCode: "OWE" | "OP" | "OM" | "OI" | "OFIZ" | "OLCHEM" | "OBIOL" | "OHIS" | "OGEO" | "OLIJP" | "LOSY" | "OFIL" | "OWOPISW" | "OASTRO" | "OJA" | "OJN" | "OJFR";
     OldPrice?: number;
     IsHotOffer?: boolean;
     ClassName?: string;
