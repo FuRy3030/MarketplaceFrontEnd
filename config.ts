@@ -11,9 +11,9 @@ const DevConfig: Config = {
 };
 
 const ProdConfig: Config = {
-    GraphQLUrl: '',
-    TutorsMicroservice_GraphQLUrl: '',
-    TutorsMicroservice_FilesUrl: ''
+    GraphQLUrl: 'https://competifymarketplacebackendtestserver.azurewebsites.net/graphql/',
+    TutorsMicroservice_GraphQLUrl: 'https://competifymentorbackendtestserver.azurewebsites.net/graphql/',
+    TutorsMicroservice_FilesUrl: 'https://competifymentorbackendtestserver.azurewebsites.net/files/'
 };
   
 export const Config = process.env.NODE_ENV === 'production' ? ProdConfig : DevConfig;

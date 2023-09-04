@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import OlympiadExperienceRating from "../../atoms/rating/OlympiadExperienceRating";
 
 interface TutorOlympiadProps {
@@ -6,11 +7,12 @@ interface TutorOlympiadProps {
     Color: string;
     Experience: string;
     ActiveDots: number;
+    ClassName?: string;
 };
 
 function TutorOlympiad(Props: TutorOlympiadProps) {
     return (
-        <div className="flex flex-row items-center my-7">
+        <div className={clsx("flex flex-row items-center my-7", Props.ClassName)}>
             <div className="flex flex-col cursor-default">
                 <OlympiadExperienceRating 
                     Color={Props.Color} 
@@ -24,7 +26,7 @@ function TutorOlympiad(Props: TutorOlympiadProps) {
                     {Props.Experience}
                 </span>
             </div>
-            <div className="flex justify-start flex-1 ml-10">
+            <div className="hidden sm:flex justify-start flex-1 ml-10">
                 <img src={Props.Logo} alt="Logo olimpiady" className="h-16 w-auto" />
             </div>
         </div>

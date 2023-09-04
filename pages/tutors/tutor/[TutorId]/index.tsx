@@ -13,12 +13,15 @@ import BottomDrawer from "../../../../app/components/modals/drawers/BottomDrawer
 import StandardButton from "../../../../app/components/atoms/buttons/MyStandardButton";
 import GetNumericalExperienceLevel from "../../../../app/helpers/tutors/GetNumericalExperienceLevel";
 import UseOlympiadsBackgrounds from "../../../../app/hooks/constants/UseOlympiadsBackgrounds";
+import GetUniversityNames from "../../../../app/api/requests/olympiads-search/queries/GetUniversityNames";
+import { useRouter } from "next/router";
 
-function Page({ Tutor } : { Tutor: ITutor }) {
+function Page({ Tutor, UniversityNames } : { Tutor: ITutor, UniversityNames: string [] }) {
     const SanitizedHTMLDescription = sanitize(Tutor.TutorDetails.Description);
+    const Router = useRouter();
 
     return (
-        <TutorsSearch ChildrenWrapperClassName="px-4">
+        <TutorsSearch ChildrenWrapperClassName="px-4" UniversityNames={UniversityNames}>
             <TutorProfileWrapper Variant="introduction" Color={UseOlympiadsLabelValuePair().find(
                 (Olympiad) => Olympiad.value === FindOlympiadWithHighestExperience(Tutor))?.color}
                 BackgroundImageSrc={UseOlympiadsBackgrounds()[FindOlympiadWithHighestExperience(Tutor) as 
@@ -27,7 +30,7 @@ function Page({ Tutor } : { Tutor: ITutor }) {
             >
                 <TutorIntroView Tutor={Tutor} />
             </TutorProfileWrapper>
-            <TutorProfileWrapper Variant="default" Text="Olimpiady przedmiotowe" ClassName="mb-11">
+            <TutorProfileWrapper Variant="default" Text="Olimpiady przedmiotowe" ClassName="mt-20 mb-11 sm:mt-0">
                 <>
                     {Tutor.TutorDetails.Olympiads.map((Olympiad) => {
                         return <TutorOlympiad 
@@ -46,9 +49,9 @@ function Page({ Tutor } : { Tutor: ITutor }) {
             <TutorProfileWrapper Variant="default" Text="Coś o mnie" ClassName="mb-10">
                 <div dangerouslySetInnerHTML={{ __html: SanitizedHTMLDescription }} />
             </TutorProfileWrapper>
-            <BottomDrawer ClassName="ml-[-1rem] flex flex-row justify-between items-center cursor-default">
-                <div className="flex flex-col flex-1">
-                    <span className="text-lg font-bold text-semi-dark-alt">
+            <BottomDrawer ClassName="ml-[-1rem] flex flex-col sm:flex-row justify-between items-center cursor-default">
+                <div className="flex flex-col flex-1 mb-2.5 sm:mb-0">
+                    <span className="text-center sm:text-left text-lg font-bold text-semi-dark-alt">
                         Nie czekaj!
                     </span>
                     <span className="text-sm font-semibold text-semi-dark">
@@ -59,8 +62,8 @@ function Page({ Tutor } : { Tutor: ITutor }) {
                     Text="Zacznij przygotowania do olimpiady"
                     Icon="icon-[mdi--cursor-default-click]"
                     Type="button"   
-                    onClick={() => {}}
-                    ClassName="bg-brand-purple-light hover:text-dark px-10 w-auto ml-4"             
+                    onClick={() => Router.push(`/tutors/tutor/${Tutor.Id}/payment`)}
+                    ClassName="bg-brand-purple-light hover:text-dark px-6 sm:px-10 w-auto ml-4 text-sm sm:text-base"             
                 />
             </BottomDrawer>
         </TutorsSearch>
@@ -70,10 +73,12 @@ function Page({ Tutor } : { Tutor: ITutor }) {
 export async function getServerSideProps({ params } : { params: Record<string, string | undefined> }) {
     const { TutorId } = params;
     const Tutor = await GetFullTutor(TutorId);
+    const UniversityNames = await GetUniversityNames();
   
     return {
         props: {
-            Tutor
+            Tutor,
+            UniversityNames
         }
     };
 }

@@ -47,11 +47,11 @@ function SideBar(Props: { IsNavOpen: boolean, ToggleNavigation: (IsOpne: boolean
                 {IsUserLogged && <SideBarLinksSection
                     Heading="Moje zasoby"
                     Links={[
-                        {
-                            To: "/profile/tutors",
-                            Text: "Tutorzy",
-                            Icon: 'icon-[material-symbols--supervisor-account-outline-rounded]'
-                        },
+                        // {
+                        //     To: "/profile/tutors",
+                        //     Text: "Tutorzy",
+                        //     Icon: 'icon-[material-symbols--supervisor-account-outline-rounded]'
+                        // },
                         {
                             To: "/profile/meetings",
                             Text: "Zajęcia",

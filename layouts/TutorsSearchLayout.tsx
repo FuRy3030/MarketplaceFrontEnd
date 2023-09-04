@@ -2,7 +2,7 @@ import { useState } from "react";
 import NavigationBar from "../app/components/organisms/navigation/NavigationBar";
 import SideBar from "../app/components/organisms/navigation/SideBar";
 
-function TutorsSearchLayout({ children } : { children: React.ReactNode }) {
+function BasicLayout({ children } : { children: React.ReactNode }) {
     const [IsNavOpen, SetIsNavOpen] = useState<boolean>(false);
 
     const ToggleNavigation = (IsOpen: boolean) => {
@@ -20,4 +20,4 @@ function TutorsSearchLayout({ children } : { children: React.ReactNode }) {
     );
 }
 
-export default TutorsSearchLayout;
+export default BasicLayout;
