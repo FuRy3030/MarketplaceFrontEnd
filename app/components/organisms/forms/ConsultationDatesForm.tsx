@@ -61,7 +61,7 @@ function ConsultationDatesForm({ Tutor, BookedDates } : { Tutor: ITutor, BookedD
         }
 
         if ((PriceOptionStateSnapshot.PaidHours === 0 && ConsultationDatesStateSnapshot.ChosenDates.length >= 1) ||
-            (PriceOptionStateSnapshot.PaidHours - ConsultationDatesStateSnapshot.ChosenDates.length) <= 0) 
+            ((PriceOptionStateSnapshot.PaidHours - ConsultationDatesStateSnapshot.ChosenDates.length) <= 0 && PriceOptionStateSnapshot.PaidHours !== 0)) 
         {
             return;
         }

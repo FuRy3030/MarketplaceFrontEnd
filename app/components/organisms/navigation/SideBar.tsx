@@ -5,6 +5,7 @@ import clsx from "clsx";
 import AuthState from "../../../store/auth/AuthState";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Config } from "../../../../config";
 
 function SideBar(Props: { IsNavOpen: boolean, ToggleNavigation: (IsOpne: boolean) => void }) {
     const { IsNavOpen, ToggleNavigation } = Props;
@@ -84,7 +85,7 @@ function SideBar(Props: { IsNavOpen: boolean, ToggleNavigation: (IsOpne: boolean
                                 OnClick={() => {}}
                             />
                         </Link> 
-                        <Link href="https://localhost:3001/auth/login">
+                        <Link href={`${Config.MentorFrontendUrl}/auth/login`}>
                             <RectangularButton
                                 Text="Dla tutorów"
                                 Icon="icon-[ph--chalkboard-teacher]"

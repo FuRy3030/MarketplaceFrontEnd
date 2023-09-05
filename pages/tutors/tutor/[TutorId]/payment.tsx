@@ -16,11 +16,18 @@ import PriceOptionState from "../../../../app/store/payments/PriceOptionState";
 import UseMeetingMutation from "../../../../app/api/requests/meetings/mutations/UseMeetingMutation";
 import GetUniversityNames from "../../../../app/api/requests/olympiads-search/queries/GetUniversityNames";
 import GetBookedDatesForTutor from "../../../../app/api/requests/meetings/queries/GetBookedDatesForTutor";
+import MyToast from "../../../../app/components/modals/toasts/MyToast";
+import { useState } from "react";
+import AuthState from "../../../../app/store/auth/AuthState";
+import { useRouter } from "next/router";
 
 function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedDates: string [], UniversityNames: string [] }) {
-    const { mutate } = UseMeetingMutation();
+    const { mutate, error } = UseMeetingMutation();
+    const Router = useRouter();
     const ConsultationDatesStateSnapshot = useSnapshot(ConsultationDatesState);
     const PriceOptionStateSnapshot = useSnapshot(PriceOptionState);
+    const IsUserLogged = useSnapshot(AuthState).IsLogged;
+    const [IsUserNotLogged, SetIsNotLogged] = useState<boolean>(false);
     
     return (
         <TutorsSearch UniversityNames={UniversityNames} ChildrenWrapperClassName="px-4">
@@ -51,20 +58,49 @@ function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedD
                 </div>
                 <StandardButton 
                     Text="Zapłać"
-                    Icon="icon-[mdi--cursor-default-click]"
+                    Icon="icon-[material-symbols--payments-rounded]"
                     Type="button"   
                     onClick={() => {
+                        if (!IsUserLogged && !IsUserNotLogged) {
+                            SetIsNotLogged(true);
+                            return;
+                        }
+                        else if (!IsUserLogged && IsUserNotLogged) {
+                            Router.push("/auth/login");
+                            return;
+                        }
+
                         if (ConsultationDatesStateSnapshot.ChosenDatesString && PriceOptionStateSnapshot.ServiceName) {
                             mutate({ 
                                 TutorId: Tutor.Id,
                                 MeetingDates: [...ConsultationDatesStateSnapshot.ChosenDatesString], 
-                                EducationalServiceName: PriceOptionStateSnapshot.ServiceName 
+                                EducationalServiceName: PriceOptionStateSnapshot.ServiceName,
+                                PaidHours: PriceOptionStateSnapshot.PaidHours
                             });
                         }
                     }}
                     ClassName="bg-brand-purple-light hover:text-dark px-10 w-auto ml-4"             
                 />
             </BottomDrawer>
+            <MyToast 
+                Title="Nie jesteś zalogowany"
+                Type="danger"
+                Icon="warning"
+                IsActionTriggered={IsUserNotLogged}
+            >
+                <p className="text-base font-medium">Aby zarezerwować i zapłacić za konsultację musisz zalogować się na swoje konto ucznia</p>
+            </MyToast>
+            <MyToast 
+                Title="Tworzenie rezerwacji nie powiodło się"
+                Type="danger"
+                Icon="warning"
+                IsActionTriggered={!!error}
+            >
+                {error?.response.errors?.at(0)?.message === 'Trial hour already used or unavaliable' ? 
+                    <p className="text-base font-medium">Wykorzystałeś już próbną konsultację dla tego tutora albo kupiłeś przynajmniej jedną płatną godzinę</p> : 
+                    <p className="text-base font-medium">Wystąpił niezydentyfikowany błąd</p>
+                }
+            </MyToast>
         </TutorsSearch>
     );
 };

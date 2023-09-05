@@ -11,6 +11,8 @@ const GET_MEETINGS_QUERY = gql`
             tutorName
             educationalServiceName
             date
+            isPaid
+            checkoutSessionURI
         }
     }
 `;

@@ -30,6 +30,8 @@ function Page() {
                                 EducationalServiceName={UseOlympiadsLabelValuePair().find((OlympiadData) => 
                                     OlympiadData.value === TutorMeeting.EducationalServiceName)?.label as string}
                                 Date={moment(TutorMeeting.Date)}
+                                IsPaid={TutorMeeting.IsPaid}
+                                PaymentURI={TutorMeeting.CheckoutSessionURI}
                                 ClassName="w-full md:w-[48%] mb-5"
                             />
                         );

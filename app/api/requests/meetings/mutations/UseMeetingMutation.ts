@@ -5,8 +5,8 @@ import GraphQLClient from "../../../GraphQLClient";
 import { useRouter } from "next/router";
 
 const CREATE_MEETING_MUTATION = gql`
-  mutation CreateMeeting($tutorId: String!, $educationalService: SubjectOlympiadNames!, $dates: [DateTime!]!) {
-    CreateMeeting(tutorId: $tutorId, educationalService: $educationalService, dates: $dates)
+  mutation CreateMeeting($tutorId: String!, $educationalService: SubjectOlympiadNames!, $dates: [DateTime!]!, $paidHours: Int!) {
+    CreateMeeting(tutorId: $tutorId, educationalService: $educationalService, dates: $dates, paidHours: $paidHours)
   }
 `;
 
@@ -20,7 +20,8 @@ const UseMeetingMutation = (() => {
                 { 
                     tutorId: NewMeeting.TutorId, 
                     educationalService: NewMeeting.EducationalServiceName, 
-                    dates: NewMeeting.MeetingDates 
+                    dates: NewMeeting.MeetingDates,
+                    paidHours: NewMeeting.PaidHours
                 }
             );
 
