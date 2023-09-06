@@ -4,9 +4,11 @@ import OlympiadsFilter from "../../app/components/organisms/filters/OlympiadsFil
 import UseOlympiadsLabelValuePair from "../../app/hooks/constants/UseOlympiadsLabelValuePair";
 import IMeeting from "../../app/api/types/meetings/IMeeting";
 import Meeting from "../../app/components/molecules/list-items/Meeting";
+import LoadingScreen from "../../app/components/LoadingScreen";
+import EmptyNotification from "../../app/components/EmptyNotification";
 
 function Page() {
-    const { data } = UseMeetingsQuery();
+    const { data, isLoading } = UseMeetingsQuery();
     
     return (
         <>
@@ -20,22 +22,28 @@ function Page() {
                     Moje zajęcia
                 </h1>
                 <div className="w-full mt-8 flex flex-row flex-wrap justify-between px-8 max-w-[1000px] mx-auto">
-                    {data?.map((TutorMeeting: IMeeting) => { 
-                        return (
-                            <Meeting 
-                                key={TutorMeeting.Id}
-                                TutorName={TutorMeeting.TutorName}
-                                Color={UseOlympiadsLabelValuePair().find((OlympiadData) => 
-                                    OlympiadData.value === TutorMeeting.EducationalServiceName)?.color as string}
-                                EducationalServiceName={UseOlympiadsLabelValuePair().find((OlympiadData) => 
-                                    OlympiadData.value === TutorMeeting.EducationalServiceName)?.label as string}
-                                Date={moment(TutorMeeting.Date)}
-                                IsPaid={TutorMeeting.IsPaid}
-                                PaymentURI={TutorMeeting.CheckoutSessionURI}
-                                ClassName="w-full md:w-[48%] mb-5"
-                            />
-                        );
-                    })}
+                    {isLoading ? 
+                        <LoadingScreen Message="Ładujemy twoje dane..." /> 
+                        : data?.length === 0 ? 
+                        <EmptyNotification Message="Narazie nie ma tu jeszcze żadnego spotkania" />
+                        :
+                        data?.map((TutorMeeting: IMeeting) => { 
+                            return (
+                                <Meeting 
+                                    key={TutorMeeting.Id}
+                                    TutorName={TutorMeeting.TutorName}
+                                    Color={UseOlympiadsLabelValuePair().find((OlympiadData) => 
+                                        OlympiadData.value === TutorMeeting.EducationalServiceName)?.color as string}
+                                    EducationalServiceName={UseOlympiadsLabelValuePair().find((OlympiadData) => 
+                                        OlympiadData.value === TutorMeeting.EducationalServiceName)?.label as string}
+                                    Date={moment(TutorMeeting.Date)}
+                                    IsPaid={TutorMeeting.IsPaid}
+                                    PaymentURI={TutorMeeting.CheckoutSessionURI}
+                                    ClassName="w-full md:w-[48%] mb-5"
+                                />
+                            );
+                        })
+                    }
                 </div>
             </div>
         </>

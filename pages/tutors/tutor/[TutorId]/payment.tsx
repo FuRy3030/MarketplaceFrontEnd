@@ -20,9 +20,10 @@ import MyToast from "../../../../app/components/modals/toasts/MyToast";
 import { useState } from "react";
 import AuthState from "../../../../app/store/auth/AuthState";
 import { useRouter } from "next/router";
+import LoadingScreen from "../../../../app/components/LoadingScreen";
 
 function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedDates: string [], UniversityNames: string [] }) {
-    const { mutate, error } = UseMeetingMutation();
+    const { mutate, error, isLoading } = UseMeetingMutation();
     const Router = useRouter();
     const ConsultationDatesStateSnapshot = useSnapshot(ConsultationDatesState);
     const PriceOptionStateSnapshot = useSnapshot(PriceOptionState);
@@ -39,22 +40,33 @@ function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedD
             >
                 <TutorIntroView Tutor={Tutor} />
             </TutorProfileWrapper>
-            <TutorProfileWrapper Variant="default" Text="Wybierz pakiet" ClassName="mt-20 mb-11 sm:mt-0">
-                <ConsultationPricingForm Tutor={Tutor} />
-            </TutorProfileWrapper>
-            <TutorProfileWrapper Variant="default" Text="Wybierz termin/y konsultacji" ClassName="mb-10">
-                <ConsultationDatesForm Tutor={Tutor} BookedDates={BookedDates} />
-            </TutorProfileWrapper>
+            {isLoading ? 
+                <LoadingScreen Message="Rezerwujemy twoją konsultację..." ClassName="mt-20 sm:mt-0" /> 
+                :
+                <>
+                    <TutorProfileWrapper Variant="default" Text="Wybierz pakiet" ClassName="mt-20 mb-11 sm:mt-0">
+                        <ConsultationPricingForm Tutor={Tutor} />
+                    </TutorProfileWrapper>
+                    <TutorProfileWrapper Variant="default" Text="Wybierz termin/y konsultacji" ClassName="mb-10">
+                        <ConsultationDatesForm Tutor={Tutor} BookedDates={BookedDates} />
+                    </TutorProfileWrapper>
+                </>
+            }
             <BottomDrawer ClassName="ml-[-1rem] flex flex-col sm:flex-row justify-between items-center cursor-default">
-                <div className="flex flex-row flex-1 mb-2.5 sm:mb-0">
-                    <span className="text-lg font-bold text-semi-dark-alt mr-2">
-                        Pozostało terminów do wybrania:
-                    </span>
-                    <span className="text-lg font-bold text-brand-purple-light">
-                        {typeof PriceOptionStateSnapshot.PaidHours === 'undefined' ? 0 :
-                            PriceOptionStateSnapshot.PaidHours === 0 ? 1 - ConsultationDatesStateSnapshot.ChosenDates.length :
-                            PriceOptionStateSnapshot.PaidHours - ConsultationDatesStateSnapshot.ChosenDates.length}
-                    </span>
+                <div className="flex flex-col flex-1 mb-2.5 sm:mb-0">
+                    <div className="flex flex-row flex-1 mb-0">
+                        <span className="text-lg font-bold text-semi-dark-alt mr-2">
+                            Pozostało terminów do wybrania:
+                        </span>
+                        <span className="text-lg font-bold text-brand-purple-light">
+                            {typeof PriceOptionStateSnapshot.PaidHours === 'undefined' ? 0 :
+                                PriceOptionStateSnapshot.PaidHours === 0 ? 1 - ConsultationDatesStateSnapshot.ChosenDates.length :
+                                PriceOptionStateSnapshot.PaidHours - ConsultationDatesStateSnapshot.ChosenDates.length}
+                        </span>
+                    </div>
+                    <span className="text-sm font-bold text-red-500">
+                        Pamiętaj, nieopłacona rezerwacja zostanie anulowana po 30 minutach!
+                    </span> 
                 </div>
                 <StandardButton 
                     Text="Zapłać"
