@@ -5,8 +5,9 @@ import MyStandardButton from "../../atoms/buttons/MyStandardButton";
 import MySimpleSelectField from "../../atoms/forms/MySimpleSelectField";
 import UseMajorsQuery from "../../../api/requests/olympiads-search/queries/UseMajorsQuery";
 import { useRouter } from "next/router";
+import clsx from "clsx";
 
-function OlympiadsSearchForm({ UniversityNames }: { UniversityNames: string[] }) {
+function OlympiadsSearchForm({ UniversityNames, ClassName }: { UniversityNames: string[], ClassName?: string }) {
     const [ UniversityName, SetUniversityName ] = useState<string>("");
     const MajorsQuery = UseMajorsQuery(UniversityName);
     const Router = useRouter();
@@ -22,7 +23,7 @@ function OlympiadsSearchForm({ UniversityNames }: { UniversityNames: string[] })
     return (
         <>
             <MyFormProvider<IOlympiadsSearchForm> FormResolver={IOlympiadsSearchResolver} DefaultValues={Values}
-                ClassName="mx-auto max-w-[600px] w-full px-10 py-4"
+                ClassName={clsx("mx-auto max-w-[600px] w-full px-10 py-4", ClassName)}
                 OnSubmit={(FormData: IOlympiadsSearchForm) => Router.push({
                     pathname: '/olympiads/search',
                     query: new URLSearchParams({ name: FormData.UniversityName, major: FormData.Major }).toString(),

@@ -12,11 +12,18 @@ const DevConfig: Config = {
     MentorFrontendUrl: 'https://localhost:3001'
 };
 
-const ProdConfig: Config = {
+const TestProdConfig: Config = {
     GraphQLUrl: 'https://competifymarketplacebackendtestserver.azurewebsites.net/graphql/',
     TutorsMicroservice_GraphQLUrl: 'https://competifymentorbackendtestserver.azurewebsites.net/graphql/',
     TutorsMicroservice_FilesUrl: 'https://competifymentorbackendtestserver.azurewebsites.net/files/',
     MentorFrontendUrl: 'https://competify-mentor-git-10-final-version-fury3030.vercel.app'
 };
+
+const ProdConfig: Config = {
+    GraphQLUrl: 'https://competifymarketplaceproduction.azurewebsites.net/graphql/',
+    TutorsMicroservice_GraphQLUrl: 'https://competifymentorproduction.azurewebsites.net/graphql/',
+    TutorsMicroservice_FilesUrl: 'https://competifymentorproduction.azurewebsites.net/files/',
+    MentorFrontendUrl: 'https://mentor-front-end.vercel.app'
+};
   
-export const Config = process.env.NODE_ENV === 'production' ? ProdConfig : DevConfig;
+export const Config = process.env.NODE_ENV === 'production' ? TestProdConfig : DevConfig;

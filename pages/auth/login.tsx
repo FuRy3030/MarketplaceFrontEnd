@@ -14,9 +14,9 @@ function Page() {
             </div>
             <div className="w-full md:w-1/2 bg-white shadow px-8 md:px-16 py-10 z-10"> 
                 <StandardHeader 
-                    UpperHeader="Logowanie -> Mentor"
+                    UpperHeader="Logowanie -> Uczeń"
                     Header="Witaj z powrotem!"
-                    SubHeader="Ciekawe co u twoich podopiecznych... Zaloguj się na platformę, aby móc pracować z przyszłymi laureatami"
+                    SubHeader="Kontynuuj swoje przygotowania... Zaloguj się na platformę, aby korzystać z tutoringu z laureatami i zwycięzcami olimpiad"
                     Variant="purple"
                 />
                 <LoginForm />

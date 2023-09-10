@@ -18,9 +18,9 @@ function Page() {
             </div>
             <div className="w-full md:w-1/2 bg-white shadow px-8 md:px-16 py-10 z-10"> 
                 <StandardHeader 
-                    UpperHeader="Nowe hasło -> Mentor"
+                    UpperHeader="Nowe hasło -> Uczeń"
                     Header="Ustaw nowe hasło"
-                    SubHeader="Przypisz nowe hasło do swojego konta tutora. Od razu po zmianie starego hasła będziesz mógł zalogować się używając nowego hasła"
+                    SubHeader="Przypisz nowe hasło do swojego konta ucznia. Od razu po zmianie starego hasła będziesz mógł zalogować się używając nowego hasła"
                     Variant="purple"
                 />
                 <NewPasswordForm Token={query.Token as string | undefined} />

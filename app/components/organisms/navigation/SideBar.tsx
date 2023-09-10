@@ -64,7 +64,7 @@ function SideBar(Props: { IsNavOpen: boolean, ToggleNavigation: (IsOpne: boolean
                     Heading="Zasady i warunki"
                     Links={[
                         {
-                            To: "/regulations",
+                            To: "/terms",
                             Text: "Regulamin",
                             Icon: 'icon-[material-symbols--lab-profile-outline-rounded]'
                         },

@@ -18,17 +18,19 @@ function Page({ PartialTutors, UniversityNames, Privileges } :
                         Te olimpiady powinny Cię zainteresować...
                     </h2>
                     <>
-                        {Privileges.map((Privilege) => {
-                            return <SearchOlympiad 
-                                key={Privilege.Olympiad}
-                                Name={UseOlympiadsLabelValuePair().find(
-                                    (OlympiadData) => OlympiadData.value === Privilege.Olympiad)?.label as string}
-                                Color={UseOlympiadsLabelValuePair().find(
-                                    (OlympiadData) => OlympiadData.value === Privilege.Olympiad)?.color as string}
-                                LaureatePrivilege={Privilege.Laureate}
-                                FinalistPrivilege={Privilege.Finalist}
-                            />
-                        })}
+                        {Privileges.filter(Privilege => Privilege.Finalist != 'NONE' && Privilege.Laureate != 'NONE')
+                            .map((Privilege: IOlympiadPrivilege) => {
+                                return <SearchOlympiad 
+                                    key={Privilege.Olympiad}
+                                    Name={UseOlympiadsLabelValuePair().find(
+                                        (OlympiadData) => OlympiadData.value === Privilege.Olympiad)?.label as string}
+                                    Color={UseOlympiadsLabelValuePair().find(
+                                        (OlympiadData) => OlympiadData.value === Privilege.Olympiad)?.color as string}
+                                    LaureatePrivilege={Privilege.Laureate}
+                                    FinalistPrivilege={Privilege.Finalist}
+                                />
+                            })
+                        }
                     </>
                 </div>
                 <h2 className="text-3xl font-bold text-dark mb-2.5 text-center cursor-default">

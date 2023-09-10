@@ -14,7 +14,7 @@ function Page() {
             </div>
             <div className="w-full md:w-1/2 bg-white shadow px-8 md:px-16 py-10 z-10"> 
                 <StandardHeader 
-                    UpperHeader="Odzyskiwanie hasła -> Mentor"
+                    UpperHeader="Odzyskiwanie hasła -> Uczeń"
                     Header="Uzyskaj nowe hasło"
                     SubHeader="Wpisz adres e-mail przypisany do twojego konta i poczekaj na link pozwalający na zmianę twojego hasła na nowe"
                     Variant="purple"

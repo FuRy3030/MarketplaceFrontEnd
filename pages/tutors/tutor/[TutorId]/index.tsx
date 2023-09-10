@@ -15,9 +15,15 @@ import GetNumericalExperienceLevel from "../../../../app/helpers/tutors/GetNumer
 import UseOlympiadsBackgrounds from "../../../../app/hooks/constants/UseOlympiadsBackgrounds";
 import GetUniversityNames from "../../../../app/api/requests/olympiads-search/queries/GetUniversityNames";
 import { useRouter } from "next/router";
+import { useSnapshot } from "valtio";
+import AuthState from "../../../../app/store/auth/AuthState";
+import { useState } from "react";
+import MyToast from "../../../../app/components/modals/toasts/MyToast";
 
 function Page({ Tutor, UniversityNames } : { Tutor: ITutor, UniversityNames: string [] }) {
     const SanitizedHTMLDescription = sanitize(Tutor.TutorDetails.Description);
+    const IsUserLogged = useSnapshot(AuthState).IsLogged;
+    const [IsUserNotLogged, SetIsNotLogged] = useState<boolean>(false);
     const Router = useRouter();
 
     return (
@@ -62,10 +68,31 @@ function Page({ Tutor, UniversityNames } : { Tutor: ITutor, UniversityNames: str
                     Text="Zacznij przygotowania do olimpiady"
                     Icon="icon-[mdi--cursor-default-click]"
                     Type="button"   
-                    onClick={() => Router.push(`/tutors/tutor/${Tutor.Id}/payment`)}
+                    onClick={() => {
+                        if (!IsUserLogged && !IsUserNotLogged) {
+                            SetIsNotLogged(true);
+                            return;
+                        }
+                        else if (!IsUserLogged && IsUserNotLogged) {
+                            Router.push("/auth/login");
+                            return;
+                        } 
+
+                        Router.push(`/tutors/tutor/${Tutor.Id}/payment`)
+                    }}
                     ClassName="bg-brand-purple-light hover:text-dark px-6 sm:px-10 w-auto ml-4 text-sm sm:text-base"             
                 />
-            </BottomDrawer>
+            </BottomDrawer>    
+            <MyToast 
+                Title="Nie jesteś zalogowany"
+                Type="danger"
+                Icon="warning"
+                IsActionTriggered={IsUserNotLogged}
+            >
+                <p className="text-base font-medium">
+                    Aby zarezerwować i zapłacić za konsultację musisz zalogować się na swoje konto ucznia
+                </p>
+            </MyToast>      
         </TutorsSearch>
     );
 };

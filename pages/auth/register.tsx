@@ -13,8 +13,8 @@ function Page() {
                 />
                 <div className="w-full px-8 md:px-16 py-10 z-10">
                     <StandardHeader 
-                        Header="Prosta weryfikacja"
-                        SubHeader="Po wypełnieniu poniższego formularza poprosimy Cię o uzupełnienie Twoich danych na temat Twoich doświadczeń, a następnie zaprosimy Cię na rozmowę weryfikacyjną"
+                        Header="Wybierz swojego tutora"
+                        SubHeader="Po utworzeniu swojego konta będziesz mógł wybrać interesującego Cię tutora i razem z nim osiągnąć obrany cel w olimpiadzie"
                         Variant="purple"
                     />
                     <Timeline 
@@ -36,28 +36,14 @@ function Page() {
                             {
                                 icon: (
                                     <EuiAvatar
-                                      name="Profile details"
-                                      iconType="documentEdit"
+                                      name="Choosing tutor"
+                                      iconType="training"
                                       color="#4b50ec"
                                     />
                                 ),
                                 children: (
                                     <span className="text-dark text-base font-bold cursor-default">
-                                        Uzupełnij swój profil
-                                    </span>
-                                ),
-                            },
-                            {
-                                icon: (
-                                    <EuiAvatar
-                                      name="Interview"
-                                      iconType="discuss"
-                                      color="#0d3cfb"
-                                    />
-                                ),
-                                children: (
-                                    <span className="text-dark text-base font-bold cursor-default">
-                                        Przejdź rozmowę weryfikacyjną
+                                        Wybierz swojego tutora
                                     </span>
                                 ),
                             },
@@ -71,7 +57,7 @@ function Page() {
                                 ),
                                 children: (
                                     <span className="text-dark text-base font-bold cursor-default">
-                                        Gotowe! Możesz zacząć udzielać korepetycji
+                                        Gotowe! Możesz zacząć korzystać z tutoringu
                                     </span>
                                 ),
                             }
@@ -81,9 +67,9 @@ function Page() {
             </div>
             <div className="w-full md:w-1/2 bg-white shadow px-8 md:px-16 py-10 z-10"> 
                 <StandardHeader 
-                    UpperHeader="Rejestracja -> Mentor"
+                    UpperHeader="Rejestracja -> Uczeń"
                     Header="Dołącz do nas!"
-                    SubHeader="Załóż swoje konto i zostań mentorem w przygotowaniach do olimpiad"
+                    SubHeader="Załóż swoje konto i zostań laureatem wybranej przez siebie olimpiady"
                     Variant="purple"
                 />
                 <RegisterForm />

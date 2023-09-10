@@ -14,7 +14,9 @@ function AuthorizeProvider(Props: AuthorizeProviderProps) {
     useEffect(() => {
         if (IsUserLogged && Router.route.startsWith('/auth')) {
             Router.push('/tutors');
-        } else if (!IsUserLogged && Router.route.startsWith('/profile')) {
+        } else if (!IsUserLogged && (Router.route.startsWith('/profile') || 
+            (Router.route.startsWith('/tutors/tutor') && Router.route.endsWith('/payment')))) 
+        {
             Router.push('/auth/login');
         }
     }, [IsUserLogged]);
