@@ -79,6 +79,28 @@ function LandingPage() {
                 <meta property="og:url" content="https://www.competify.pl" />
                 <meta property="og:type" content="website" />
                 <link rel="icon" href="/logo/favicon.ico" />
+                <Script strategy="afterInteractive">
+                    {`
+                    !function(f,b,e,v,n,t,s)
+                    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window, document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '146653598423875');
+                    fbq('track', 'PageView');
+                    `}
+                </Script>
+                <noscript>
+                    <img
+                        height="1"
+                        width="1"
+                        style={{ display: 'none' }}
+                        src="https://www.facebook.com/tr?id=146653598423875&ev=PageView&noscript=1"
+                    />
+                </noscript>
             </Head>
             <NavigationBar />
             <div className='z-10 absolute top-[100px] left-[5vw] w-[90vw] mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw]'>
@@ -198,28 +220,6 @@ function LandingPage() {
             {/* <CookieConsent /> */}
             <div className='hidden'>
                 <Script src="https://consent.cookiebot.com/uc.js" id="Cookiebot" strategy="lazyOnload" data-cbid="69e93994-aaff-4e1c-bf8c-72b5a328576d" data-blockingmode="auto" />
-                <Script strategy="afterInteractive">
-                    {`
-                    !function(f,b,e,v,n,t,s)
-                    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-                    n.queue=[];t=b.createElement(e);t.async=!0;
-                    t.src=v;s=b.getElementsByTagName(e)[0];
-                    s.parentNode.insertBefore(t,s)}(window, document,'script',
-                    'https://connect.facebook.net/en_US/fbevents.js');
-                    fbq('init', '146653598423875');
-                    fbq('track', 'PageView');
-                    `}
-                </Script>
-                <noscript>
-                    <img
-                    height="1"
-                    width="1"
-                    style={{ display: 'none' }}
-                    src="https://www.facebook.com/tr?id=146653598423875&ev=PageView&noscript=1"
-                    />
-                </noscript>
                 {/* <Script src="https://consent.cookiebot.com/69e93994-aaff-4e1c-bf8c-72b5a328576d/cd.js" id="CookieDeclaration" strategy="lazyOnload" async /> */}
             </div>
         </>
