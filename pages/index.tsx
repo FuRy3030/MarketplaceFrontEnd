@@ -79,7 +79,7 @@ function LandingPage() {
                 <meta property="og:url" content="https://www.competify.pl" />
                 <meta property="og:type" content="website" />
                 <link rel="icon" href="/logo/favicon.ico" />
-                <Script strategy="afterInteractive">
+                <script>
                     {`
                     !function(f,b,e,v,n,t,s)
                     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -92,7 +92,7 @@ function LandingPage() {
                     fbq('init', '146653598423875');
                     fbq('track', 'PageView');
                     `}
-                </Script>
+                </script>
                 <noscript>
                     <img
                         height="1"
