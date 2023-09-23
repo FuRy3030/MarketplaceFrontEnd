@@ -8,6 +8,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import DefaultQueryClient from '../app/api/DefaultQueryClient';
 import BasicLayout from '../layouts/TutorsSearchLayout';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const Router = useRouter();
@@ -29,6 +30,38 @@ function MyApp({ Component, pageProps }: AppProps) {
                 }}
             >
                 <AuthorizeProvider>
+                    <Head>
+                        <title>Competify - Razem z nami zawalczysz o najwyższe wyniki!</title>
+                        <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                        <meta property="og:title" content="Competify - Razem z nami zawalczysz o najwyższe wyniki!" />
+                        <meta property="og:description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                        <meta property="og:image" content="/website-previews/website-preview.png" />
+                        <meta property="og:url" content="https://www.competify.pl" />
+                        <meta property="og:type" content="website" />
+                        <link rel="icon" href="/logo/favicon.ico" />
+                        <script>
+                            {`
+                            !function(f,b,e,v,n,t,s)
+                            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                            n.queue=[];t=b.createElement(e);t.async=!0;
+                            t.src=v;s=b.getElementsByTagName(e)[0];
+                            s.parentNode.insertBefore(t,s)}(window, document,'script',
+                            'https://connect.facebook.net/en_US/fbevents.js');
+                            fbq('init', '146653598423875');
+                            fbq('track', 'PageView');
+                            `}
+                        </script>
+                        <noscript>
+                            <img
+                                height="1"
+                                width="1"
+                                style={{ display: 'none' }}
+                                src="https://www.facebook.com/tr?id=146653598423875&ev=PageView&noscript=1"
+                            />
+                        </noscript>
+                    </Head>
                     {IsBasicLayoutRoute ? 
                         <BasicLayout>
                             <Component {...pageProps} />

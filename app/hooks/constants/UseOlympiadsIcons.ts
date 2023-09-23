@@ -17,6 +17,7 @@ export default function UseOlympiadsIcons() {
         OASTRO: 'icon-[ph--planet-fill]',
         OJA: 'icon-[icon-park-solid--english]',
         OJN: 'icon-[lucide--languages]',
-        OJFR: 'icon-[mdi--eiffel-tower]'
+        OJFR: 'icon-[mdi--eiffel-tower]',
+        OSTAT: 'icon-[material-symbols--insert-chart-outline-rounded]'
     };
 };

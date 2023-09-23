@@ -16,6 +16,7 @@ export default function UseOlympiadsBackgrounds() {
         OASTRO: '/olympiads-backgrounds/OAstro.jpg',
         OJA: '/olympiads-backgrounds/OJA.jpg',
         OJN: '/olympiads-backgrounds/OJN.jpg',
-        OJFR: '/olympiads-backgrounds/OJF.jpg'
+        OJFR: '/olympiads-backgrounds/OJF.jpg',
+        OSTAT: '/olympiads-backgrounds/OSTAT.jpg'
     };
 };

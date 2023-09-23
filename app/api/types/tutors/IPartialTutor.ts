@@ -6,7 +6,7 @@ interface IPartialTutor {
         City: string;
         Country: string;
         Olympiads: {
-            Name: "OWE" | "OP" | "OM" | "OI" | "OFIZ" | "OLCHEM" | "OBIOL" | "OHIS" | "OGEO" | "OLIJP" | "LOSY" | "OFIL" | "OWOPISW" | "OASTRO" | "OJA" | "OJN" | "OJFR";
+            Name: "OWE" | "OP" | "OM" | "OI" | "OFIZ" | "OLCHEM" | "OBIOL" | "OHIS" | "OGEO" | "OLIJP" | "LOSY" | "OFIL" | "OWOPISW" | "OASTRO" | "OJA" | "OJN" | "OJFR" | "OSTAT";
             Experience: 'FINALIST' | 'LAUREATE' | 'INTERNATIONAL' | 'WINNER';
         } [];
         IsRemote: boolean;

@@ -20,7 +20,7 @@ module.exports = {
       },
       fontSize: {
         'title': 'clamp(30px, 5vw, 85px)',
-        'mobile-title': '10.25vw'
+        'mobile-title': '34px'
       },
       borderColor: {
         'brand-purple-light': '#635bff',
@@ -64,6 +64,7 @@ module.exports = {
         'OJFR': '#002a7e',
         'OJN': '#ff0000',
         'OJA': '#d0222c',
+        'OSTAT': '#66b68e'
       },
       backgroundColor: {
         'deep-dark': '#12153a',
@@ -105,6 +106,7 @@ module.exports = {
         'OJFR': '#002a7e',
         'OJN': '#ff0000',
         'OJA': '#d0222c',
+        'OSTAT': '#66b68e'
       },
       boxShadow: {
         'steep-jjt': '0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 5px 0 rgba(0, 0, 0, 0.04)',

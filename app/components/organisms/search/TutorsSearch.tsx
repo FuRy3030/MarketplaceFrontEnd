@@ -22,11 +22,18 @@ function TutorsSearch(Props: TutorsSearchProps) {
             </div>
             <div className="w-full flex flex-row flex-1 bg-dark-gray" 
                 style={{ minHeight: 'calc(100vh - 203.67px)', maxHeight: 'calc(100vh - 203.67px)' }}
+                // style={{ minHeight: '100vh', maxHeight: '100vh' }}
             >
-                <div className={clsx("w-full lg:w-[64%] flex flex-col overflow-y-auto overflow-x-hidden CustomVerticalScrollWithGrayBackground", IsOlympiadSearchOpen && 'hidden', Props.ChildrenWrapperClassName)}>
+                {/* <div className={clsx("w-full lg:w-[64%] flex flex-col overflow-y-auto overflow-x-hidden CustomVerticalScrollWithGrayBackground", IsOlympiadSearchOpen && 'hidden', Props.ChildrenWrapperClassName)}>
                     {Props.children}
                 </div>
                 <div className={clsx("w-full lg:w-[36%] lg:flex lg:flex-col bg-white relative", !IsOlympiadSearchOpen && 'hidden')}>
+                    <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="mt-8 sm:mt-0" />
+                </div> */}
+                <div className={clsx("w-full lg:w-[64.5%] flex flex-col overflow-y-auto overflow-x-hidden CustomVerticalScrollWithGrayBackground", IsOlympiadSearchOpen && 'hidden', Props.ChildrenWrapperClassName)}>
+                    {Props.children}
+                </div>
+                <div className={clsx("w-full lg:w-[35.5%] lg:flex lg:flex-col bg-white relative", !IsOlympiadSearchOpen && 'hidden')}>
                     <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="mt-8 sm:mt-0" />
                 </div>
             </div>

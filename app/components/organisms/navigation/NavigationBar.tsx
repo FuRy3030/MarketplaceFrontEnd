@@ -1,15 +1,19 @@
+import Link from "next/link";
 import RectangularButton from "../../atoms/buttons/RectangularButton";
 import NavigationBarLink from "../../atoms/navigation/NavigationBarLink";
+import { useSnapshot } from "valtio";
+import AuthState from "../../../store/auth/AuthState";
 
 function NavigationBar(Props: { ToggleNavigation: (IsOpen: boolean) => void }) {
     const { ToggleNavigation } = Props;
+    const IsUserLogged = useSnapshot(AuthState).IsLogged;
 
     return (
         <div className="flex items-center z-30 relative w-screen h-auto bg-white px-7 py-4 border-b border-gray-200 border-solid">
-            <div className="w-auto flex flex-row gap-x-4 items-center mt-1">
+            <div className="w-auto flex flex-row gap-x-4 items-center mt-1 mr-auto lg:mr-0">
                 <img className="w-[140px] h-auto" src="/logo/competify-logo.png" alt="Logo" />
             </div>
-            <span className="hidden sm:block text-base text-semi-dark font-medium cursor-default px-4 py-2 mr-auto">
+            <span className="hidden lg:block text-sm text-semi-dark font-medium cursor-default px-3 py-2 mr-auto">
                 Razem z nami zawalczysz o najwyższe wyniki!
             </span>
             <NavigationBarLink
@@ -30,6 +34,16 @@ function NavigationBar(Props: { ToggleNavigation: (IsOpen: boolean) => void }) {
                 Icon="icon-[mdi--book-search-outline]" 
                 ClassName="hidden lg:flex"
             />
+            {!IsUserLogged &&
+                <Link href="/auth/login" className="ml-1.5 mr-1">         
+                    <RectangularButton
+                        Text="Zaloguj się"
+                        Icon="icon-[ph--student]" 
+                        ClassName="w-full mx-1"
+                        OnClick={() => {}}
+                    />
+                </Link>
+            }
             {/* <RectangularButton
                 Text="Dla uczniów"
                 ClassName="mr-4 ml-7"
