@@ -194,13 +194,13 @@ function LandingPage({ UniversityNames } : { UniversityNames: string [] }) {
                         />
                         <WhyUs />
                     </Container>
-                    <Container ClassNames="my-14 overflow-x-auto" Id="Tutors">
+                    {/* <Container ClassNames="my-14 overflow-x-auto" Id="Tutors">
                         <SmallSectionHeader 
                             SubHeader="Nasi tutorzy" 
                             Header="Poznaj naszych ekspertów w przygotowaniu do olimpiad" 
                         />
                         <TutorsList />
-                    </Container>
+                    </Container> */}
                     <Container ClassNames="my-14" Id="Contact">
                         <SmallSectionHeader 
                             SubHeader="Kontakt" 
