@@ -12,7 +12,7 @@ function Page({ UniversityNames } : { UniversityNames: string [] }) {
                 style={{ minHeight: 'calc(100vh - 203.67px)', maxHeight: 'calc(100vh - 203.67px)' }}
             >
                 <div className="w-full h-full flex flex-col bg-white relative">
-                    <OlympiadsSearchForm UniversityNames={UniversityNames} />
+                    <OlympiadsSearchForm UniversityNames={UniversityNames} ClassName="px-10" />
                 </div>
             </div>
         </>

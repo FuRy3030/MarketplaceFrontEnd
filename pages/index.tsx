@@ -97,7 +97,7 @@ function LandingPage({ UniversityNames } : { UniversityNames: string [] }) {
                         ClassName="mt-3 sm:mt-0 px-0 md:px-10" 
                     />
                 </div>
-                <div className='w-full md:w-[55%] relative'>
+                <div className='w-full md:w-[55%] relative overflow-hidden'>
                     <img 
                         src='/personal_design_images/app-overview.png'
                         className='w-[100%] h-auto pt-4 pb-16 md:pb-6 ml-7'
@@ -106,7 +106,7 @@ function LandingPage({ UniversityNames } : { UniversityNames: string [] }) {
                 </div>
             </div>
             <div className='relative w-full h-auto'>
-                <div className='z-10 absolute top-[20px] w-[94vw] items-start pl-2.5 mx-auto h-auto flex flex-col md:left-[7.5vw] md:w-[70vw] md:items-start md:px-0'>
+                <div className='z-10 absolute top-[14px] w-[100vw] items-start px-6 mx-auto h-auto flex flex-col md:top-[22px] md:left-[7.5vw] md:w-[70vw] md:items-start md:px-0'>
                     <h1 id='Headline' className='text-mobile-title px-4 relative text-deep-dark font-extrabold mb-2.5 mt-6 cursor-default leading-[1.05] md:mb-5 md:mt-0 md:px-0 md:text-title' style={{fontFamily: "'Nunito', sans-serif", letterSpacing: '-0.04em'}}>
                         Z naszym zespołem <br />
                         osiągniesz wymarzony <br />
@@ -144,7 +144,7 @@ function LandingPage({ UniversityNames } : { UniversityNames: string [] }) {
                         }
                     </div>
                 </div>
-                <div className={clsx('relative block w-screen md:w-[98.5vw] lg:w-[99vw] xl:w-screen h-auto mt-10')} 
+                <div className={clsx('relative block w-screen md:w-[100vw] lg:w-[100vw] xl:w-screen h-auto mt-10')} 
                     // IsHigherLandingScreenNeeded ? 'top-[120vh]' : !IsMobileUsed ? 'top-[110vh]' : 'top-[100vh]')}
                 >
                     <Container ClassNames="flex flex-wrap" Id="CompanyQualities">

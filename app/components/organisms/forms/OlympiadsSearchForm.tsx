@@ -23,7 +23,7 @@ function OlympiadsSearchForm({ UniversityNames, ClassName }: { UniversityNames: 
     return (
         <>
             <MyFormProvider<IOlympiadsSearchForm> FormResolver={IOlympiadsSearchResolver} DefaultValues={Values}
-                ClassName={clsx("mx-auto max-w-[600px] w-full px-10 py-4", ClassName)}
+                ClassName={clsx(ClassName, "mx-auto max-w-[600px] w-full py-4")}
                 OnSubmit={(FormData: IOlympiadsSearchForm) => Router.push({
                     pathname: '/olympiads/search',
                     query: new URLSearchParams({ name: FormData.UniversityName, major: FormData.Major }).toString(),

@@ -28,13 +28,13 @@ function TutorsSearch(Props: TutorsSearchProps) {
                     {Props.children}
                 </div>
                 <div className={clsx("w-full lg:w-[36%] lg:flex lg:flex-col bg-white relative", !IsOlympiadSearchOpen && 'hidden')}>
-                    <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="mt-8 sm:mt-0" />
+                    <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="px-10 mt-8 sm:mt-0" />
                 </div> */}
                 <div className={clsx("w-full lg:w-[64.5%] flex flex-col overflow-y-auto overflow-x-hidden CustomVerticalScrollWithGrayBackground", IsOlympiadSearchOpen && 'hidden', Props.ChildrenWrapperClassName)}>
                     {Props.children}
                 </div>
                 <div className={clsx("w-full lg:w-[35.5%] lg:flex lg:flex-col bg-white relative", !IsOlympiadSearchOpen && 'hidden')}>
-                    <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="mt-8 sm:mt-0" />
+                    <OlympiadsSearchForm UniversityNames={Props.UniversityNames} ClassName="px-10 mt-8 sm:mt-0" />
                 </div>
             </div>
             {!Router.route.startsWith("/tutors/tutor") &&

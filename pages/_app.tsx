@@ -32,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <AuthorizeProvider>
                     <Head>
                         <title>Competify - Razem z nami zawalczysz o najwyższe wyniki!</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
                         <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
                         <meta property="og:title" content="Competify - Razem z nami zawalczysz o najwyższe wyniki!" />
                         <meta property="og:description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />

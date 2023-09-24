@@ -9,9 +9,11 @@ function NavigationBar(Props: { ToggleNavigation: (IsOpen: boolean) => void }) {
     const IsUserLogged = useSnapshot(AuthState).IsLogged;
 
     return (
-        <div className="flex items-center z-30 relative w-screen h-auto bg-white px-7 py-4 border-b border-gray-200 border-solid">
+        <div className="flex items-center z-30 relative w-screen h-auto bg-white px-3.5 md:px-7 py-4 border-b border-gray-200 border-solid">
             <div className="w-auto flex flex-row gap-x-4 items-center mt-1 mr-auto lg:mr-0">
-                <img className="w-[140px] h-auto" src="/logo/competify-logo.png" alt="Logo" />
+                <Link href="/tutors" className="cursor-pointer">
+                    <img className="w-[140px] h-auto" src="/logo/competify-logo.png" alt="Logo" />
+                </Link>
             </div>
             <span className="hidden lg:block text-sm text-semi-dark font-medium cursor-default px-3 py-2 mr-auto">
                 Razem z nami zawalczysz o najwyższe wyniki!
@@ -55,7 +57,7 @@ function NavigationBar(Props: { ToggleNavigation: (IsOpen: boolean) => void }) {
                 Icon="icon-[ph--chalkboard-teacher]" 
                 OnClick={() => {}}
             /> */}
-            <div className="ml-auto pl-3 pr-1.5 sm:ml-4 border-l border-gray-200 border-solid">
+            <div className="pl-3 pr-1.5 ml-4 border-l border-gray-200 border-solid">
                 <button className="flex items-center justify-center p-2.5 rounded-full w-full h-full transition-all duration-300 hover:bg-brand-purple-extra-light"
                     onClick={() => ToggleNavigation(true)}
                 >
