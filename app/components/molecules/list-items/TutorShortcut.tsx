@@ -77,7 +77,7 @@ function TutorShortcut(Props: TutorShortcutProps) {
                                 ClassName="mx-2.5"
                             />
                         }
-                        {Props.Tutor.TutorDetails.IsRemote && 
+                        {Props.Tutor.TutorDetails.IsStationary && 
                             <StandardBadge
                                 Text="Stacjonarnie" 
                                 Variant="fill"
