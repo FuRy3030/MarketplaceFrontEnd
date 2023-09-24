@@ -21,7 +21,7 @@ function AvatarWithRings(Props: AvatarWithRingsProps) {
                 border: `${Props.BorderRingSize ? Props.BorderRingSize : 12}px solid ${Props.TransparentRings ? 'rgba(255, 255, 255, 0.15)' : 'rgba(99, 91, 255, 0.15)'}`, 
                 backgroundColor: Props.TransparentRings ? 'rgba(255, 255, 255, 0.3)' : 'rgba(99, 91, 255, 0.3)' }}
         >
-            <Image
+            <img
                 src={Props.Src ? Props.Src + `?${Date.now().toString()}` : '/flaticons/user.png'}
                 style={{ width: `${Props.Width}px`, height: `${Props.Height}px` }}  
                 className="rounded-full object-cover bg-white"
