@@ -83,7 +83,7 @@ function TutorShortcut(Props: TutorShortcutProps) {
                                 Variant="fill"
                                 Background="brand"
                                 Color="brand"
-                                ClassName="mr-auto"
+                                ClassName="mr-2.5"
                             />
                         }
                         <StandardBadge
@@ -91,7 +91,7 @@ function TutorShortcut(Props: TutorShortcutProps) {
                             Background="white"
                             Color="gray"
                             Variant="outline"
-                            ClassName="hidden sm:flex"
+                            ClassName="hidden sm:flex ml-auto"
                         />
                     </div>
                     <div className="w-full flex flex-row flex-wrap md:flex-nowrap items-center justify-end gap-y-1.5 md:gap-y-0 gap-x-2">
