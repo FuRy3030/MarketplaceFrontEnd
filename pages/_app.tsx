@@ -61,6 +61,16 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 src="https://www.facebook.com/tr?id=146653598423875&ev=PageView&noscript=1"
                             />
                         </noscript>
+                        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXVP0FWBDK"></script>
+                        <script>
+                            {`
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+
+                            gtag('config', 'G-QXVP0FWBDK');
+                            `}
+                        </script>
                     </Head>
                     {IsBasicLayoutRoute ? 
                         <BasicLayout>
