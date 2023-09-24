@@ -26,4 +26,4 @@ const ProdConfig: Config = {
     MentorFrontendUrl: 'https://mentor-front-end.vercel.app'
 };
   
-export const Config = process.env.NODE_ENV === 'production' ? TestProdConfig : DevConfig;
+export const Config = process.env.NODE_ENV === 'production' ? ProdConfig : DevConfig;
