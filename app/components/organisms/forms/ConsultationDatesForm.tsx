@@ -30,13 +30,13 @@ function ConsultationDatesForm({ Tutor, BookedDates } : { Tutor: ITutor, BookedD
     );
 
     const [MeetingPickerDates, SetMeetingPickerDates] = useState<Moment []>([
-        moment().tz('Europe/Warsaw'),
         moment().tz('Europe/Warsaw').add(1, 'day'),
-        moment().tz('Europe/Warsaw').add(2, 'day'), 
-        moment().tz('Europe/Warsaw').add(3, 'day'),
+        moment().tz('Europe/Warsaw').add(2, 'day'),
+        moment().tz('Europe/Warsaw').add(3, 'day'), 
         moment().tz('Europe/Warsaw').add(4, 'day'),
         moment().tz('Europe/Warsaw').add(5, 'day'),
-        moment().tz('Europe/Warsaw').add(6, 'day')
+        moment().tz('Europe/Warsaw').add(6, 'day'),
+        moment().tz('Europe/Warsaw').add(7, 'day')
     ]);
 
     const SetMeetingPickerDatesFromCalendar = (Date: Moment) => {
@@ -90,7 +90,7 @@ function ConsultationDatesForm({ Tutor, BookedDates } : { Tutor: ITutor, BookedD
                     }}
                     shadow
                     fullWidth
-                    minDate={moment().tz('Europe/Warsaw')}
+                    minDate={moment().tz('Europe/Warsaw').add(1, 'day')}
                     maxDate={moment().tz('Europe/Warsaw').add(90, 'days')}
                 />
             </EuiFormRow>

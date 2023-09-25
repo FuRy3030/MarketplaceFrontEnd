@@ -10,7 +10,7 @@ type ConsultationDatesStateType = {
 };
 
 const ConsultationDatesState = proxy({
-    CurrentlySelectedDate: moment().tz('Europe/Warsaw'),
+    CurrentlySelectedDate: moment().tz('Europe/Warsaw').add(1, 'day'),
     ChosenDates: [],
     ChosenDatesString: []
 } as ConsultationDatesStateType);
