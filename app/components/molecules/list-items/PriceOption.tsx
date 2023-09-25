@@ -2,6 +2,7 @@ import { EuiRadio } from "@elastic/eui";
 import clsx from "clsx";
 import PriceOptionState from "../../../store/payments/PriceOptionState";
 import { useSnapshot } from "valtio";
+import ConsultationDatesState from "../../../store/payments/ConsultationDatesState";
 
 interface PriceOptionProps {
     Id: string;
@@ -17,6 +18,7 @@ interface PriceOptionProps {
 
 function PriceOption(Props: PriceOptionProps) {
     const PriceOptionSnapshot = useSnapshot(PriceOptionState);
+    const ConsultationDatesSnapshot = useSnapshot(ConsultationDatesState);
 
     return (
         <div className={clsx("flex flex-row items-center py-2 bg-white my-3.5", Props.IsHotOffer ? 'HotContent' : 'shadow-steep-jjt', Props.ClassName)}
@@ -29,6 +31,8 @@ function PriceOption(Props: PriceOptionProps) {
                 onChange={(e) => {
                     PriceOptionState.PaidHours = Props.PaidHours;
                     PriceOptionState.ServiceName = Props.ServiceCode;
+                    ConsultationDatesState.ChosenDates = [];
+                    ConsultationDatesState.ChosenDatesString = [];
                 }}
                 label=""
                 className="my-2.5 ml-4"

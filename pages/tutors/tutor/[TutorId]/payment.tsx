@@ -17,7 +17,7 @@ import UseMeetingMutation from "../../../../app/api/requests/meetings/mutations/
 import GetUniversityNames from "../../../../app/api/requests/olympiads-search/queries/GetUniversityNames";
 import GetBookedDatesForTutor from "../../../../app/api/requests/meetings/queries/GetBookedDatesForTutor";
 import MyToast from "../../../../app/components/modals/toasts/MyToast";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AuthState from "../../../../app/store/auth/AuthState";
 import { useRouter } from "next/router";
 import LoadingScreen from "../../../../app/components/LoadingScreen";
@@ -29,6 +29,13 @@ function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedD
     const PriceOptionStateSnapshot = useSnapshot(PriceOptionState);
     const IsUserLogged = useSnapshot(AuthState).IsLogged;
     const [IsUserNotLogged, SetIsNotLogged] = useState<boolean>(false);
+
+    useEffect(() => {
+        PriceOptionState.PaidHours = undefined;
+        PriceOptionState.ServiceName = undefined;
+        ConsultationDatesState.ChosenDates = [];
+        ConsultationDatesState.ChosenDatesString = [];
+    }, []);
     
     return (
         <TutorsSearch UniversityNames={UniversityNames} ChildrenWrapperClassName="px-4">
