@@ -30,22 +30,22 @@ function Page({ PartialTutors, UniversityNames } : { PartialTutors: IPartialTuto
     );
 };
 
-export async function getStaticPaths() {
-    const Paths = UseOlympiadsLabelValuePair().map((Olympiad) => { 
-        return {
-            params: {
-                Olympiad: Olympiad.value?.toLowerCase()
-            }
-        }
-    });
+// export async function getStaticPaths() {
+//     const Paths = UseOlympiadsLabelValuePair().map((Olympiad) => { 
+//         return {
+//             params: {
+//                 Olympiad: Olympiad.value?.toLowerCase()
+//             }
+//         }
+//     });
   
-    return {
-        paths: Paths,
-        fallback: true
-    };
-}
+//     return {
+//         paths: Paths,
+//         fallback: true
+//     };
+// }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const PartialTutors = await GetPartialTutors();
     const UniversityNames = await GetUniversityNames();
   
@@ -53,8 +53,7 @@ export async function getStaticProps() {
         props: {
             PartialTutors,
             UniversityNames
-        },
-        revalidate: 3600 
+        }
     };
 }
 
