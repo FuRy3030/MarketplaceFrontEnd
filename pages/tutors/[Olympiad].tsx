@@ -31,7 +31,13 @@ function Page({ PartialTutors, UniversityNames } : { PartialTutors: IPartialTuto
 };
 
 export async function getStaticPaths() {
-    const Paths = UseOlympiadsLabelValuePair().map((Olympiad) => Olympiad.value?.toLowerCase());
+    const Paths = UseOlympiadsLabelValuePair().map((Olympiad) => { 
+        return {
+            params: {
+                Olympiad: Olympiad.value?.toLowerCase()
+            }
+        }
+    });
   
     return {
         paths: Paths,
