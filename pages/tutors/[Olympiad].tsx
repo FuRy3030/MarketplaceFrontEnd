@@ -4,6 +4,7 @@ import IPartialTutor from "../../app/api/types/tutors/IPartialTutor";
 import TutorsSearch from "../../app/components/organisms/search/TutorsSearch";
 import TutorShortcut from "../../app/components/molecules/list-items/TutorShortcut";
 import GetUniversityNames from "../../app/api/requests/olympiads-search/queries/GetUniversityNames";
+import UseOlympiadsLabelValuePair from "../../app/hooks/constants/UseOlympiadsLabelValuePair";
 
 
 function Page({ PartialTutors, UniversityNames } : { PartialTutors: IPartialTutor [], UniversityNames: string [] }) {
@@ -28,6 +29,16 @@ function Page({ PartialTutors, UniversityNames } : { PartialTutors: IPartialTuto
         </TutorsSearch>
     );
 };
+
+export async function getStaticPaths() {
+    const Paths = UseOlympiadsLabelValuePair().map((Olympiad) => Olympiad.value?.toLowerCase());
+  
+    return {
+        paths: Paths,
+        fallback: true,
+        revalidate: 3600 
+    };
+}
 
 export async function getStaticProps() {
     const PartialTutors = await GetPartialTutors();

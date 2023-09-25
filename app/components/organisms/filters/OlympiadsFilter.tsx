@@ -17,7 +17,7 @@ function OlympiadsFilter(Props: OlympiadsFilterProps) {
                     IsActive={!Props.SelectedOlympiad}
                 />
             </Link>
-            {UseOlympiadsLabelValuePair().map((Olympiad) =>{
+            {UseOlympiadsLabelValuePair().map((Olympiad) => {
                 return (
                     <Link key={Olympiad.value} href={`/tutors/${Olympiad.value?.toLowerCase()}`}>
                         <OlympiadButton
