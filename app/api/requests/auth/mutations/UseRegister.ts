@@ -16,6 +16,7 @@ const UseRegister = (() => {
         async (NewUser: IRegisterForm) => {
             const Response: any = await request(Config.GraphQLUrl, ADD_USER_MUTATION, 
                 { input: ToCamelCase(NewUser, ['PolicyConsent']) });
+            eval(`fbq('track', 'CompleteRegistration')`);
             return Response.addUser as boolean;
         }
     )
