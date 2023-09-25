@@ -97,7 +97,7 @@ function Page({ Tutor, UniversityNames } : { Tutor: ITutor, UniversityNames: str
     );
 };
 
-export async function getStaticProps({ params } : { params: Record<string, string | undefined> }) {
+export async function getServerSideProps({ params } : { params: Record<string, string | undefined> }) {
     const { TutorId } = params;
     const Tutor = await GetFullTutor(TutorId);
     const UniversityNames = await GetUniversityNames();
@@ -106,8 +106,7 @@ export async function getStaticProps({ params } : { params: Record<string, strin
         props: {
             Tutor,
             UniversityNames
-        },
-        revalidate: 3600
+        }
     };
 }
 

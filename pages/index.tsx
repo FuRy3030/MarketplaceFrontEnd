@@ -237,7 +237,7 @@ export async function getStaticProps() {
         props: {
             UniversityNames
         },
-        revalidate: 3600
+        revalidate: 86400
     };
 }
   
