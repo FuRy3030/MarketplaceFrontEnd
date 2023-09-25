@@ -15,7 +15,7 @@ function Page({ PartialTutors, UniversityNames } : { PartialTutors: IPartialTuto
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const PartialTutors = await GetPartialTutors();
     const UniversityNames = await GetUniversityNames();
   
@@ -23,7 +23,8 @@ export async function getServerSideProps() {
         props: {
             PartialTutors,
             UniversityNames
-        }
+        },
+        revalidate: 3600  
     };
 }
 

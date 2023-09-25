@@ -46,7 +46,7 @@ function Page({ PartialTutors, UniversityNames, Privileges } :
     );
 };
 
-export async function getServerSideProps(context: any) {
+export async function getStaticProps(context: any) {
     const { query } = context;
     const { name, major } = query;
 
@@ -59,7 +59,8 @@ export async function getServerSideProps(context: any) {
             PartialTutors,
             UniversityNames,
             Privileges
-        }
+        },
+        revalidate: 3600
     };
 }
 

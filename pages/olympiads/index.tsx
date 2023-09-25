@@ -19,13 +19,14 @@ function Page({ UniversityNames } : { UniversityNames: string [] }) {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const UniversityNames = await GetUniversityNames();
   
     return {
         props: {
             UniversityNames
-        }
+        },
+        revalidate: 3600
     };
 }
 
