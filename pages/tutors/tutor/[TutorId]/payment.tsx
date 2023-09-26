@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import AuthState from "../../../../app/store/auth/AuthState";
 import { useRouter } from "next/router";
 import LoadingScreen from "../../../../app/components/LoadingScreen";
+import moment from "moment";
 
 function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedDates: string [], UniversityNames: string [] }) {
     const { mutate, error, isLoading } = UseMeetingMutation();
@@ -35,6 +36,7 @@ function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedD
         PriceOptionState.ServiceName = undefined;
         ConsultationDatesState.ChosenDates = [];
         ConsultationDatesState.ChosenDatesString = [];
+        ConsultationDatesState.CurrentlySelectedDate = moment().tz('Europe/Warsaw').add(1, 'day');
     }, []);
     
     return (
@@ -116,7 +118,10 @@ function Page({ Tutor, BookedDates, UniversityNames } : { Tutor: ITutor, BookedD
                 IsActionTriggered={!!error}
             >
                 {error?.response.errors?.at(0)?.message === 'Trial hour already used or unavaliable' ? 
-                    <p className="text-base font-medium">Wykorzystałeś już próbną konsultację dla tego tutora albo kupiłeś przynajmniej jedną płatną godzinę</p> : 
+                    <p className="text-base font-medium">Wykorzystałeś już próbną konsultację dla tego tutora albo kupiłeś przynajmniej jedną płatną godzinę</p> 
+                    : error?.response.errors?.at(0)?.message === 'No meeting dates selected' ?
+                    <p className="text-base font-medium">Nie wybrałeś żadnego terminu dla wybranych zajęć. Wybierz preferowaną datę i spróbuj ponownie</p> 
+                    :
                     <p className="text-base font-medium">Wystąpił niezydentyfikowany błąd</p>
                 }
             </MyToast>
