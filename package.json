@@ -16,6 +16,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@iconify/json": "^2.2.68",
     "@iconify/tailwind": "^0.1.2",
+    "@react-oauth/google": "^0.11.1",
     "@tanstack/react-query": "^4.29.12",
     "@tinymce/tinymce-react": "^4.3.0",
     "@types/node": "20.1.7",

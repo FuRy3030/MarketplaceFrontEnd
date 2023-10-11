@@ -11,6 +11,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import LoadingLayout from '../layouts/LoadingLayout';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 function MyApp({ Component, pageProps }: AppProps) {
     const Router = useRouter();
@@ -34,64 +35,66 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <QueryClientProvider client={DefaultQueryClient}>
-            <GoogleReCaptchaProvider
-                reCaptchaKey="6LeIniMoAAAAAJKIkrpaYkDGPZpDfUGpZnnvvk1H"
-                language="pl"
-                scriptProps={{
-                    async: false, 
-                    defer: false, 
-                    appendTo: 'head', 
-                    nonce: undefined
-                }}
-            >
-                <AuthorizeProvider>
-                    <Head>
-                        <title>Competify - Razem z nami zawalczysz o najwyższe wyniki!</title>
-                        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-                        <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
-                        <meta property="og:title" content="Competify - Razem z nami zawalczysz o najwyższe wyniki!" />
-                        <meta property="og:description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
-                        <meta property="og:image" content="/website-previews/website-preview.png" />
-                        <meta property="og:url" content="https://www.competify.pl" />
-                        <meta property="og:type" content="website" />
-                        <link rel="icon" href="/logo/favicon.ico" />
-                        <script type="text/plain" data-cookieconsent="marketing">
+            <GoogleOAuthProvider clientId="621294321598-f2do7o0bssah923a7amtvi0u3727d3vl.apps.googleusercontent.com">
+                <GoogleReCaptchaProvider
+                    reCaptchaKey="6LeIniMoAAAAAJKIkrpaYkDGPZpDfUGpZnnvvk1H"
+                    language="pl"
+                    scriptProps={{
+                        async: false, 
+                        defer: false, 
+                        appendTo: 'head', 
+                        nonce: undefined
+                    }}
+                >
+                    <AuthorizeProvider>
+                        <Head>
+                            <title>Competify - Razem z nami zawalczysz o najwyższe wyniki!</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+                            <meta name="description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                            <meta property="og:title" content="Competify - Razem z nami zawalczysz o najwyższe wyniki!" />
+                            <meta property="og:description" content="W Competify zajmujemy się kompleksowym przygotowaniem do olimpiad: łączymy ambitnych uczniów szkół średnich z laureatami najwyższych lokat, którzy dokładnie wiedzą, co trzeba zrobić, aby wygrać olimpiadę" />
+                            <meta property="og:image" content="/website-previews/website-preview.png" />
+                            <meta property="og:url" content="https://www.competify.pl" />
+                            <meta property="og:type" content="website" />
+                            <link rel="icon" href="/logo/favicon.ico" />
+                            <script type="text/plain" data-cookieconsent="marketing">
+                                {`
+                                    !function(f,b,e,v,n,t,s) 
+                                    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                                    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
+                                    n.queue=[];t=b.createElement(e);t.async=!0;
+                                    t.src=v;s=b.getElementsByTagName(e)[0]; 
+                                    s.parentNode.insertBefore(t,s)}(window, document,'script',  
+                                    'https://connect.facebook.net/en_US/fbevents.js');
+                                    fbq('init', '146653598423875');
+                                    fbq('track', 'PageView');
+                                `}
+                            </script> 
+                            <script type="text/plain" data-cookieconsent="marketing" async src="https://www.googletagmanager.com/gtag/js?id=G-QXVP0FWBDK"></script>
+                            <script type="text/plain" data-cookieconsent="marketing">
                             {`
-                                !function(f,b,e,v,n,t,s) 
-                                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-                                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; 
-                                n.queue=[];t=b.createElement(e);t.async=!0;
-                                t.src=v;s=b.getElementsByTagName(e)[0]; 
-                                s.parentNode.insertBefore(t,s)}(window, document,'script',  
-                                'https://connect.facebook.net/en_US/fbevents.js');
-                                fbq('init', '146653598423875');
-                                fbq('track', 'PageView');
-                            `}
-                        </script> 
-                        <script type="text/plain" data-cookieconsent="marketing" async src="https://www.googletagmanager.com/gtag/js?id=G-QXVP0FWBDK"></script>
-                        <script type="text/plain" data-cookieconsent="marketing">
-                        {`
-                            window.dataLayer = window.dataLayer || [];
-                            function gtag(){dataLayer.push(arguments);}
-                            gtag('js', new Date());
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
 
-                            gtag('config', 'G-QXVP0FWBDK');
-                        `}
-                        </script>
-                    </Head>
-                    {IsPageLoading ? 
-                        <LoadingLayout /> 
-                        : 
-                        IsBasicLayoutRoute ? 
-                        <BasicLayout>
+                                gtag('config', 'G-QXVP0FWBDK');
+                            `}
+                            </script>
+                        </Head>
+                        {IsPageLoading ? 
+                            <LoadingLayout /> 
+                            : 
+                            IsBasicLayoutRoute ? 
+                            <BasicLayout>
+                                <Component {...pageProps} />
+                            </BasicLayout>
+                            :
                             <Component {...pageProps} />
-                        </BasicLayout>
-                        :
-                        <Component {...pageProps} />
-                    }
-                </AuthorizeProvider>
-            </GoogleReCaptchaProvider>
+                        }
+                    </AuthorizeProvider>
+                </GoogleReCaptchaProvider>
+            </GoogleOAuthProvider>
         </QueryClientProvider>
     );
 }

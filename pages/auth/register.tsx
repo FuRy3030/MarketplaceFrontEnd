@@ -3,8 +3,18 @@ import Timeline from "../../app/components/molecules/list-items/Timeline";
 import StandardHeader from "../../app/components/molecules/typography/StandardHeader";
 import RegisterForm from "../../app/components/organisms/forms/RegisterForm";
 import MySimpleLinksNavigation from "../../app/components/molecules/links/MySimpleLinksNavigation";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
+import UseGoogle from "../../app/api/requests/auth/mutations/UseGoogle";
 
 function Page() {
+    const { mutate } = UseGoogle();
+
+    const OnGoogleLoginSuccess = (CredentialResponse: CredentialResponse) => {
+        if (CredentialResponse.credential) {
+            mutate(CredentialResponse.credential);
+        }
+    }
+
     return (
         <div className="w-screen min-h-auto flex flex-col md:min-h-screen md:flex-row">
             <div className="w-full flex flex-col-reverse md:block md:w-1/2 relative bg-light-grey">
@@ -72,6 +82,17 @@ function Page() {
                     SubHeader="Załóż swoje konto i zostań laureatem wybranej przez siebie olimpiady"
                     Variant="purple"
                 />
+                <div className="w-full flex justify-center">
+                    <GoogleLogin
+                        onSuccess={OnGoogleLoginSuccess}
+                        onError={() => {
+                            console.log('Login Failed');
+                        }}
+                    />
+                </div>
+                <span className="w-full flex justify-center text-center mt-3.5 mb-2.5 font-bold text-dark text-base cursor-default">
+                    --- Albo --- 
+                </span>
                 <RegisterForm />
                 <MySimpleLinksNavigation 
                     ClassName="mt-8"
