@@ -11,7 +11,7 @@ function Page() {
         if (CredentialResponse.credential) {
             mutate(CredentialResponse.credential);
         }
-    }
+    };
 
     return (
         <div className="w-screen min-h-auto flex flex-col-reverse md:min-h-screen md:flex-row">
